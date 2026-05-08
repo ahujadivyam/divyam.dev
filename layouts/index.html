@@ -43,6 +43,13 @@
       <div class="project-card-inner">
         <h3 class="project-card-name">{{ .name }}</h3>
         <p class="project-card-desc">{{ .description }}</p>
+        {{- with .tags }}
+        <div class="project-card-tags">
+          {{- range . }}
+          <span class="project-card-tag">{{ . }}</span>
+          {{- end }}
+        </div>
+        {{- end }}
       </div>
     </div>
     {{- else }}
@@ -50,6 +57,13 @@
       <div class="project-card-inner">
         <h3 class="project-card-name">{{ .name }}</h3>
         <p class="project-card-desc">{{ .description }}</p>
+        {{- with .tags }}
+        <div class="project-card-tags">
+          {{- range . }}
+          <span class="project-card-tag">{{ . }}</span>
+          {{- end }}
+        </div>
+        {{- end }}
       </div>
       <span class="project-card-arrow">→</span>
     </a>
