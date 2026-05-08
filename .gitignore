@@ -1,0 +1,12 @@
+# Hugo build output
+public/
+resources/
+.hugo_build.lock
+
+# Typst output (optional, but since we compile it in GitHub Actions, you can ignore the local PDF if you want.
+# Actually, wait. You might want to track static/resume.pdf if you want it served directly without GH Actions.
+# We will NOT ignore static/resume.pdf so it stays in the repo).
+
+# OS generated files
+.DS_Store
+Thumbs.db

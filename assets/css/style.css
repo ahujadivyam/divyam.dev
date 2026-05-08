@@ -901,3 +901,55 @@ th {
 main {
   animation: fadeIn 0.4s ease-out;
 }
+
+/* --- Table of Contents --- */
+.post-toc {
+  background-color: var(--bg-alt);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  font-size: 0.9em;
+}
+
+.toc-title {
+  font-weight: 700;
+  color: var(--fg-bright);
+  cursor: pointer;
+  user-select: none;
+  margin-bottom: 0.5rem;
+}
+
+.post-toc summary::marker {
+  color: var(--accent);
+}
+
+.post-toc nav#TableOfContents {
+  margin-top: 0.5rem;
+  padding-left: 0.5rem;
+}
+
+.post-toc nav#TableOfContents ul {
+  list-style-type: none;
+  padding-left: 1rem;
+  margin: 0;
+}
+
+.post-toc nav#TableOfContents > ul {
+  padding-left: 0;
+}
+
+.post-toc nav#TableOfContents li {
+  margin-bottom: 0.25rem;
+}
+
+.post-toc nav#TableOfContents a {
+  color: var(--fg-dim);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.post-toc nav#TableOfContents a:hover {
+  color: var(--accent);
+  text-decoration: underline;
+}

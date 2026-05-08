@@ -17,6 +17,12 @@
     </div>
   </div>
   <div class="post-content">
+    {{- if and (ne .Params.toc false) (gt (len .TableOfContents) 32) }}
+    <details class="post-toc" open>
+      <summary class="toc-title">Table of Contents</summary>
+      {{ .TableOfContents }}
+    </details>
+    {{- end }}
     {{ .Content }}
   </div>
   <hr>
