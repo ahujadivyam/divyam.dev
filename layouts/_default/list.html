@@ -1,0 +1,29 @@
+{{ define "main" }}
+<h1 class="page-title">{{ .Title }}</h1>
+
+{{- if eq .Section "posts" }}
+  {{/* Blog archive listing */}}
+  {{- $posts := .Pages -}}
+  {{- $byYear := $posts.GroupByDate "2006" -}}
+  {{- range $byYear }}
+  <div class="archive-year">
+    <h3 class="year-heading">{{ .Key }}</h3>
+    <ul class="post-list">
+      {{- range .Pages }}
+      <li class="post-list-item">
+        <time class="post-date" datetime="{{ .Date.Format "2006-01-02" }}">
+          {{ .Date.Format "02 Jan" }}
+        </time>
+        <a href="{{ .Permalink }}" class="post-title-link">{{ .Title }}</a>
+      </li>
+      {{- end }}
+    </ul>
+  </div>
+  {{- end }}
+{{- else }}
+  {{/* Generic page content */}}
+  <div class="post-content">
+    {{ .Content }}
+  </div>
+{{- end }}
+{{ end }}

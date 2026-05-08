@@ -1,0 +1,12 @@
+<header class="site-header">
+  <div class="site-header-inner">
+    <a href="/" class="site-title">{{ .Site.Title }}</a>
+    <nav class="site-nav">
+      {{- $currentPage := . -}}
+      {{- range $i, $item := .Site.Menus.main -}}
+        {{- if $i }}<span class="nav-separator">|</span>{{ end -}}
+        <a href="{{ .URL }}"{{ if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }} class="active"{{ end }}>{{ .Name }}</a>
+      {{- end -}}
+    </nav>
+  </div>
+</header>

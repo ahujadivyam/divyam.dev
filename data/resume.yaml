@@ -1,0 +1,155 @@
+name: Divyam Ahuja
+role: Software Engineer
+
+contact:
+  phone:
+    display: "+91 7015600547"
+    url: "tel:+917015600547"
+  email:
+    display: "ahujadivyam@gmail.com"
+    url: "mailto:ahujadivyam@gmail.com"
+  website:
+    display: "divyam.dev"
+    url: "https://divyam.dev"
+  linkedin:
+    display: "in/ahujadivyam"
+    url: "https://linkedin.com/in/ahujadivyam"
+  git:
+    display: "git.divyam.dev"
+    url: "https://git.divyam.dev/"
+  github:
+    display: "gh/ahujadivyam"
+    url: "https://github.com/ahujadivyam"
+
+experience:
+  - company: Microsoft
+    role: Software Engineer
+    location: Noida
+    start: Mar 2025
+    end: Present
+    stack:
+      - Python
+      - JavaScript
+      - TypeScript
+      - Playwright
+      - Telemetry
+    bullets:
+      - "Build, evaluate, and enhance AI-powered user experiences for the Excel Copilot team."
+      - "Architected a parallelized automation framework for synthetic data generation and evaluation, boosting pipeline throughput by **5x**."
+      - "Orchestrated the Responsible AI (RAI) pipeline, executing evaluation runs on new models to guarantee safe and deterministic AI outputs."
+      - "Acted as on-call Shield Engineer, monitoring pipeline health, triaging partner issues, and driving incident response for critical bugs."
+      - "Integrated comprehensive telemetry, structured logging, and observability dashboards into pipelines to maintain **>95%** reliability."
+      - "Engineered autonomous AI agents to automate repetitive tasks and optimize workflow efficiency."
+
+  - company: Advanced Micro Devices (AMD)
+    role: System Software Designer
+    location: Bangalore
+    start: Aug 2022
+    end: Feb 2025
+    stack:
+      - C
+      - C++
+      - Java
+      - Python
+      - React.js
+      - JavaScript
+    bullets:
+      - "Engineered an OpenJDK performance monitoring system, enabling early detection and mitigation of performance degradation."
+      - "Spearheaded the development of a visualization dashboard and RESTful API for OpenJDK telemetry, increasing data accessibility by **40%**."
+      - "Automated nightly Java benchmarking and tuning using machine learning models, achieving a **30%** reduction in manual effort."
+      - "Executed advanced Java tuning techniques, yielding a **2%** performance increase across High Performance Computing (HPC) servers."
+      - "Refactored and containerized legacy projects for cross-platform compatibility, driving a **90%** reduction in deployment errors."
+      - "Received the **Spotlight Award** for exceptional contributions to automation and nightly benchmark visualization."
+
+  - company: Chromium
+    role: Google Summer of Code Contributor (Open Source Developer)
+    location: Remote
+    start: May 2022
+    end: Aug 2022
+    stack:
+      - JavaScript
+      - TypeScript
+      - C
+      - C++
+      - WebAudio
+      - WebAssembly
+      - WebWorkers
+    bullets:
+      - "Researched and implemented optimal design patterns integrating the WebAudio API with WebAssembly and WebWorkers."
+      - "Designed and authored a high-performance, lock-free ring buffer library for real-time audio processing."
+    links:
+      - display: "github.com/ahujadivyam/gsoc-chromium-freequeue"
+        url: "https://github.com/ahujadivyam/gsoc-chromium-freequeue"
+
+skills:
+  - type: Programming Languages
+    items:
+      - C/C++
+      - Python
+      - JavaScript/TypeScript
+      - Java
+      - Go (Golang)
+      - Bash
+      - PHP
+  - type: Frameworks
+    items:
+      - React.js
+      - Next.js
+      - Express.js
+      - Django
+      - Flask
+      - Node.js
+  - type: Tools/Platforms
+    items:
+      - Git
+      - Docker
+      - Emscripten
+      - UNIX
+      - Linux
+      - POSIX
+      - Shell
+      - Kubernetes
+      - WebAssembly
+      - WordPress
+  - type: Databases
+    items:
+      - MySQL
+      - MongoDB
+      - PostgreSQL
+      - Redis
+
+projects:
+  - name: "fastbin: a code sharing webapp"
+    stack:
+      - HTMX
+      - Go (Golang)
+      - gRPC
+      - PostgreSQL
+      - Docker
+      - Kubernetes
+    links:
+      - display: "git.divyam.dev/divyam/fastbin"
+        url: "https://git.divyam.dev/divyam/fastbin"
+      - display: "fastbin.lab.divyam.dev"
+        url: "https://fastbin.lab.divyam.dev"
+
+  - name: Homelab
+    stack:
+      - Raspberry Pi 5
+      - WireGuard
+      - Kubernetes
+      - Rancher
+      - MetalLB
+
+education:
+  - school: Deenbandhu Chhotu Ram University of Science and Technology
+    location: Haryana, India
+    course: "Bachelor of Technology (B.Tech.) Computer Science"
+    start: Aug 2018
+    end: Aug 2022
+
+certifications:
+  - name: "MITx 6.86x: Machine Learning with Python-From Linear Models to Deep Learning"
+    url: "https://courses.edx.org/certificates/52e99c3c32d8470b9761c8327c4417ca"
+  - name: "CS50AI: CS50's Introduction to Artificial Intelligence with Python"
+    url: "https://courses.edx.org/certificates/686aaef0b47e438ba5ebd040e0f0b5fd"

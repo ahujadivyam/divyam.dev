@@ -1,0 +1,64 @@
+{{ define "main" }}
+<section class="home-bio">
+  <p>{{ .Site.Params.bio }}</p>
+  <p class="social-line">
+    Find me on
+    {{- range $i, $s := .Site.Params.social -}}
+      {{- if $i }},{{ end }}
+      <a href="{{ $s.url }}" target="_blank" rel="noopener noreferrer">{{ $s.name }}</a>
+    {{- end -}}.
+  </p>
+</section>
+
+{{- $posts := where .Site.RegularPages "Section" "posts" -}}
+{{- if $posts }}
+<section>
+  <h2 class="section-heading">Blog</h2>
+  {{- $byYear := $posts.GroupByDate "2006" -}}
+  {{- range $byYear }}
+  <div class="archive-year">
+    <h3 class="year-heading">{{ .Key }}</h3>
+    <ul class="post-list">
+      {{- range .Pages }}
+      <li class="post-list-item">
+        <time class="post-date" datetime="{{ .Date.Format "2006-01-02" }}">
+          {{ .Date.Format "02 Jan" }}
+        </time>
+        <a href="{{ .Permalink }}" class="post-title-link">{{ .Title }}</a>
+      </li>
+      {{- end }}
+    </ul>
+  </div>
+  {{- end }}
+</section>
+{{- end }}
+
+{{- if .Site.Params.projects }}
+<section>
+  <h2 class="section-heading">Projects</h2>
+  <div class="projects-grid">
+    {{- range .Site.Params.projects }}
+    {{- if eq .url "#" }}
+    <div class="project-card">
+      <div class="project-card-inner">
+        <h3 class="project-card-name">{{ .name }}</h3>
+        <p class="project-card-desc">{{ .description }}</p>
+      </div>
+    </div>
+    {{- else }}
+    <a href="{{ .url }}" class="project-card" target="_blank" rel="noopener noreferrer">
+      <div class="project-card-inner">
+        <h3 class="project-card-name">{{ .name }}</h3>
+        <p class="project-card-desc">{{ .description }}</p>
+      </div>
+      <span class="project-card-arrow">→</span>
+    </a>
+    {{- end }}
+    {{- end }}
+  </div>
+  <div style="margin-top: 1rem; text-align: right;">
+    <a href="/projects/" class="post-title-link">View all projects →</a>
+  </div>
+</section>
+{{- end }}
+{{ end }}

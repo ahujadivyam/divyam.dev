@@ -1,0 +1,93 @@
+baseURL = "https://divyam.dev/"
+locale = "en-us"
+title = "Divyam Ahuja"
+
+# Use Hugo's built-in asset pipeline
+[markup]
+  [markup.highlight]
+    style = "monokai"
+    lineNos = false
+    codeFences = true
+    guessSyntax = true
+    noClasses = false
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+[params]
+  description = "Software Engineer"
+  author = "Divyam Ahuja"
+  bio = "Software Engineer at Microsoft, working on the Excel Copilot team. I enjoy building side projects, tinkering with infrastructure, and deep-diving into performance optimization."
+  avatar = "/avatar.png"
+  email = "ahujadivyam@gmail.com"
+
+  # Social links
+  [[params.social]]
+    name = "GitHub"
+    icon = "github"
+    url = "https://github.com/ahujadivyam"
+
+  [[params.social]]
+    name = "LinkedIn"
+    icon = "linkedin"
+    url = "https://linkedin.com/in/ahujadivyam"
+
+  [[params.social]]
+    name = "Git"
+    icon = "git"
+    url = "https://git.divyam.dev"
+
+  [[params.social]]
+    name = "Email"
+    icon = "mail"
+    url = "mailto:ahujadivyam@gmail.com"
+
+  # Projects
+  [[params.projects]]
+    name = "fastbin"
+    url = "https://git.divyam.dev/divyam/fastbin"
+    description = "A high-performance code sharing webapp with real-time updates"
+    tags = ["Go", "HTMX", "gRPC", "PostgreSQL", "Docker", "Kubernetes"]
+
+  [[params.projects]]
+    name = "gsoc-chromium-freequeue"
+    url = "https://github.com/ahujadivyam/gsoc-chromium-freequeue"
+    description = "Lock-free ring buffer library built during Google Summer of Code for Chromium's audio processing"
+    tags = ["C++", "WebAudio", "WebAssembly", "WebWorkers"]
+
+  [[params.projects]]
+    name = "Homelab"
+    url = "#"
+    description = "Self-hosted high-availability infrastructure on Raspberry Pi 5"
+    tags = ["Kubernetes", "WireGuard", "Rancher", "MetalLB"]
+
+  [[params.projects]]
+    name = "divyam.dev"
+    url = "https://git.divyam.dev/divyam/divyam.dev"
+    description = "This minimal, high-performance portfolio and blog"
+    tags = ["Hugo", "CSS"]
+
+[menus]
+  [[menus.main]]
+    name = "Home"
+    url = "/"
+    weight = 1
+  [[menus.main]]
+    name = "Blog"
+    url = "/posts/"
+    weight = 2
+  [[menus.main]]
+    name = "Projects"
+    url = "/projects/"
+    weight = 3
+  [[menus.main]]
+    name = "Resume"
+    url = "/resume/"
+    weight = 4
+
+[outputs]
+  home = ["HTML", "RSS"]
+
+[sitemap]
+  changeFreq = "weekly"
+  priority = 0.5

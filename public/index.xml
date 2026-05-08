@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Divyam Ahuja</title>
+    <link>http://localhost:1313/</link>
+    <description>Recent content on Divyam Ahuja</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 08 May 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hello World</title>
+      <link>http://localhost:1313/posts/hello-world/</link>
+      <pubDate>Fri, 08 May 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/hello-world/</guid>
+      <description>&lt;p&gt;Welcome to my new blog! I&amp;rsquo;ve rebuilt my personal website from scratch using &lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt;, a fast static site generator written in Go.&lt;/p&gt;&#xA;&lt;h2 id=&#34;why-hugo&#34;&gt;Why Hugo?&lt;/h2&gt;&#xA;&lt;p&gt;I wanted something minimal, fast, and that gets out of the way. Hugo checks all the boxes:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Blazing fast builds&lt;/strong&gt; — the entire site builds in under 100ms&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Markdown-first&lt;/strong&gt; — I write posts in plain markdown files&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Zero JavaScript&lt;/strong&gt; — the site ships pure HTML and CSS&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Built-in features&lt;/strong&gt; — syntax highlighting, RSS feeds, sitemaps, all out of the box&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;the-design&#34;&gt;The Design&lt;/h2&gt;&#xA;&lt;p&gt;The design is inspired by the &lt;a href=&#34;https://probberechts.github.io/hexo-theme-cactus/&#34;&gt;Cactus Dark&lt;/a&gt; theme — a minimalist, terminal-inspired aesthetic with monospace typography and a dark color scheme. I built the theme from scratch for full control.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Building a PDF Translation Pipeline</title>
+      <link>http://localhost:1313/posts/pdf-translation-pipeline/</link>
+      <pubDate>Wed, 11 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/pdf-translation-pipeline/</guid>
+      <description>&lt;p&gt;Recently, I needed to translate a PDF document from Hindi to English. Sounds simple enough, right? Turns out, it&amp;rsquo;s a surprisingly deep rabbit hole.&lt;/p&gt;&#xA;&lt;h2 id=&#34;the-pipeline&#34;&gt;The Pipeline&lt;/h2&gt;&#xA;&lt;p&gt;The approach I settled on follows this flow:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;PDF → Images → OCR → Translation → Rendered Images → PDF&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Each step has its own set of challenges:&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&lt;strong&gt;PDF to Images&lt;/strong&gt;: Convert each page to a high-DPI image for better OCR accuracy&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;OCR&lt;/strong&gt;: Extract text with position data using PaddleOCR&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Translation&lt;/strong&gt;: Run extracted text through NLLB (No Language Left Behind)&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Rendering&lt;/strong&gt;: Paint translated text back onto the original image&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Assembly&lt;/strong&gt;: Combine rendered images back into a PDF&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h2 id=&#34;lessons-learned&#34;&gt;Lessons Learned&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;DPI matters a lot&lt;/strong&gt; — bumping from 150 to 300 DPI dramatically improved OCR accuracy for Hindi text&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Font rendering is hard&lt;/strong&gt; — getting translated text to fit in the same bounding boxes required careful font size calculation&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Fallback strategies&lt;/strong&gt; — TrOCR as a fallback when PaddleOCR fails on certain text regions&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;The code is messy but it works. Sometimes that&amp;rsquo;s enough.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>About</title>
+      <link>http://localhost:1313/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/about/</guid>
+      <description>&lt;p&gt;Hi, I&amp;rsquo;m a full-stack developer who loves building things. I enjoy hacking on side projects, exploring new technologies, and deep-diving into the technical details of how things work.&lt;/p&gt;&#xA;&lt;p&gt;I work across the stack — from crafting interactive frontends to designing robust backend systems. When I&amp;rsquo;m not writing code, I&amp;rsquo;m probably reading about distributed systems, tinkering with new tools, or working on one of my many side projects.&lt;/p&gt;&#xA;&lt;p&gt;I enjoy hacking on things and deep diving into the technical details of protocols, performance optimization, and algorithms.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Projects</title>
+      <link>http://localhost:1313/projects/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/projects/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Resume</title>
+      <link>http://localhost:1313/resume/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/resume/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>
