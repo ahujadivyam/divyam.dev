@@ -24,7 +24,16 @@
         <time class="post-date" datetime="{{ .Date.Format "2006-01-02" }}">
           {{ .Date.Format "02 Jan" }}
         </time>
-        <a href="{{ .Permalink }}" class="post-title-link">{{ .Title }}</a>
+        <div class="post-list-info">
+          <a href="{{ .Permalink }}" class="post-title-link">{{ .Title }}</a>
+          {{- with .Params.tags }}
+          <span class="post-list-tags">
+            {{- range . }}
+            <a href="/posts/?tag={{ . | urlize }}" class="post-list-tag">#{{ . }}</a>
+            {{- end }}
+          </span>
+          {{- end }}
+        </div>
       </li>
       {{- end }}
     </ul>

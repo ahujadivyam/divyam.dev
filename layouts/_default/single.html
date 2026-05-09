@@ -10,7 +10,7 @@
       <span class="separator">|</span>
       <span class="post-tags">
         {{- range . }}
-        <a href="{{ "tags/" | absURL }}{{ . | urlize }}/" class="post-tag">#{{ . }}</a>
+        <a href="/posts/?tag={{ . | urlize }}" class="post-tag">#{{ . }}</a>
         {{- end }}
       </span>
       {{- end }}

@@ -280,6 +280,75 @@ img {
   border-bottom-color: var(--accent);
 }
 
+.post-list-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.post-list-tags {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.post-list-tag {
+  color: var(--accent-dim);
+  font-size: 0.8rem;
+}
+
+.post-list-tag:hover {
+  color: var(--accent);
+}
+
+/* --- Tags Cloud --- */
+.tags-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.tag-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.4rem 0.8rem;
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  color: var(--fg);
+  font-size: 0.9rem;
+  transition: all var(--transition);
+}
+
+.tag-item:hover {
+  border-color: var(--accent);
+  background: var(--bg-hover);
+  color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.tag-item.active {
+  border-color: var(--accent);
+  background: var(--accent-glow);
+  color: var(--accent);
+}
+
+button.tag-item {
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.tag-count {
+  color: var(--fg-dim);
+  font-size: 0.8rem;
+}
+
 /* Year group */
 .year-heading {
   font-size: 1.1rem;

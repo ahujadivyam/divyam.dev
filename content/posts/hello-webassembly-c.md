@@ -2,45 +2,41 @@
 title: "Hello WebAssembly: Getting Started with C/C++"
 date: 2023-11-21T06:40:48Z
 draft: false
-tags: ["WebAssembly", "C", "C++", "Emscripten", "WASM"]
+tags: ["WebAssembly", "C", "C++", "Emscripten"]
 ---
 
-WebAssembly (often abbreviated as wasm) is a binary instruction format for a stack-based virtual machine. It's designed as a portable compilation target for programming languages, enabling deployment on the web for client and server applications. The power of WebAssembly lies in its ability to execute code at near-native speed, opening up a world of possibilities for web applications. Let’s dive deep into setting up the tools and writing our first WebAssembly module using C.
+If you've spent any time working on performance-critical web applications, you've probably hit the performance ceiling of JavaScript. I ran into this heavily during my Google Summer of Code project working on Chromium's audio processing pipeline. We needed near-native speeds to process audio without stuttering, and standard JavaScript just wasn't going to cut it.
 
-## What is WebAssembly?
+Enter **WebAssembly** (Wasm). 
 
-WebAssembly acts as a bridge between high-performance code written in languages like C, C++, or Rust, and the web. Traditional web applications run entirely on JavaScript, which, while powerful, might not be the most efficient language for computationally intensive tasks. WebAssembly provides a fast, low-level binary format that browsers can execute, bringing near-native performance to web applications.
+WebAssembly is essentially a low-level binary format that runs directly in the browser at near-native speeds. It lets us write code in systems languages like C, C++, or Rust, compile it, and run it right alongside our JavaScript. 
 
-## Prerequisites
+Today, I want to walk you through the absolute basics: taking a simple C program and running it in your browser. 
 
-To embark on our WebAssembly journey, we need a set of tools to compile our C/C++ code into wasm format. The primary toolchain for this task is Emscripten. Emscripten compiles C/C++ code into WebAssembly and generates the necessary JavaScript and HTML glue code for seamless integration into web applications.
+## The Magic Tool: Emscripten
 
-### Setting Up Emscripten
+To bridge the gap between C/C++ and the web, we need a toolchain. The undisputed heavyweight champion here is **Emscripten**. It takes your C/C++ code, compiles it into a `.wasm` binary, and even generates the JavaScript "glue" code needed to load it into the browser.
 
-The first step is setting up Emscripten. Open your terminal and follow these commands:
+Let's get it installed. Open your terminal and run:
 
 ```bash
-# Clone Emscripten SDK repository
+# Clone the Emscripten SDK
 git clone https://github.com/emscripten-core/emsdk.git
-
-# Enter the cloned directory
 cd emsdk
 
-# Install the latest Emscripten tools
+# Fetch and install the latest tools
 ./emsdk install latest
 
-# Activate the installed tools
+# Make them active
 ./emsdk activate latest
 
-# Source the environment variables for your current terminal session
+# Load the environment variables (you'll need to do this for new terminal sessions)
 source ./emsdk_env.sh
 ```
 
-With Emscripten installed and configured, we're ready to write and compile our C code.
+## Writing some C Code
 
-## Writing C Code
-
-Let's keep it simple for our first WebAssembly module. Create a file named `hello.c` with the following content:
+Let's not overcomplicate things for our first run. Create a file called `hello.c`:
 
 ```c
 #include <stdio.h>
@@ -51,40 +47,38 @@ int main() {
 }
 ```
 
-This C program simply prints a classic greeting to the standard output. Now, the magic happens when we compile this code using Emscripten.
+It doesn't get much simpler than that. But how do we get this to run in Chrome or Firefox?
 
-## Compiling to WebAssembly
+## Compiling to Wasm
 
-In your terminal, navigate to the directory containing your `hello.c` file and execute the following command:
+With our Emscripten environment active, we can use `emcc` (the Emscripten Compiler Frontend). In the same directory as your `hello.c` file, run:
 
 ```bash
 emcc hello.c -o hello.html
 ```
 
-Let's break down this command:
+Here is what's happening under the hood:
+- `emcc` is our compiler.
+- `-o hello.html` tells Emscripten that we don't just want the raw binary; we want an HTML file we can actually open. 
 
-- `emcc`: The Emscripten Compiler Frontend.
-- `hello.c`: Your input C file.
-- `-o hello.html`: The output flag specifying that we want an HTML file. Emscripten will not only generate the WebAssembly binary (`hello.wasm`) but also the necessary JavaScript and HTML code (`hello.js` and `hello.html`) to run it in a browser.
+If you look at your directory now, Emscripten generated three files: `hello.wasm` (the actual compiled binary), `hello.js` (the JavaScript glue code to load the binary), and `hello.html` (a basic webpage to display the output).
 
-Once the compilation is complete, you should find three new files in your directory: `hello.wasm`, `hello.js`, and `hello.html`.
+## Running the Code
 
-## Running the WebAssembly Module
+Because browsers have strict security policies around loading local files via JavaScript, you can't just double-click `hello.html`. We need to serve it over a local web server. 
 
-Now, let's see our WebAssembly module in action. Since browsers restrict fetching local files for security reasons, it's recommended to serve the generated files via a local server.
-
-You can use a simple tool like Python's `http.server` or `live-server` for this purpose. Let's use Python:
+Python makes this super easy:
 
 ```bash
 python3 -m http.server
 ```
 
-Open your web browser and navigate to `http://localhost:8000/hello.html`. You should see a webpage displaying the output of our C program: "Hello, WebAssembly!".
+Now, open your browser and head to `http://localhost:8000/hello.html`. If everything went according to plan, you'll see a terminal-like console on the webpage printing: `Hello, WebAssembly!`.
 
-## Conclusion
+## Wrapping up
 
-We've covered the basics of WebAssembly, installed the necessary toolchain (Emscripten), written a simple C program, and successfully compiled and executed it in a web browser.
+This is obviously just the tip of the iceberg. Printing a string is fun, but the real power of WebAssembly comes from porting massive C++ codebases (like audio engines, physics simulators, or databases) directly into the browser. 
 
-This is just the tip of the iceberg. WebAssembly opens the door to porting complex applications, games, and libraries to the web, pushing the boundaries of what is possible in the browser. In future posts, we'll explore more advanced topics, including passing data between JavaScript and WebAssembly, handling memory, and optimizing code for the web.
+In future posts, I'll dive into more realistic use cases—like how I used Wasm and WebWorkers to build lock-free ring buffers for Chromium, passing complex memory structures back and forth between JavaScript and C++. 
 
-Happy coding with WebAssembly!
+Until then, happy hacking!

@@ -3,6 +3,16 @@
 
 {{- if eq .Section "posts" }}
   {{/* Blog archive listing */}}
+  
+  <div class="tag-filter-container">
+    <div class="tags-cloud" style="margin-top: 0.5rem; margin-bottom: 2.5rem;">
+      <button class="tag-item active" data-filter="all">All</button>
+      {{- range $name, $taxonomy := .Site.Taxonomies.tags }}
+      <button class="tag-item" data-filter="{{ $name | urlize }}">#{{ $name }} <span class="tag-count">({{ len $taxonomy }})</span></button>
+      {{- end }}
+    </div>
+  </div>
+
   {{- $posts := .Pages -}}
   {{- $byYear := $posts.GroupByDate "2006" -}}
   {{- range $byYear }}
@@ -10,16 +20,95 @@
     <h3 class="year-heading">{{ .Key }}</h3>
     <ul class="post-list">
       {{- range .Pages }}
-      <li class="post-list-item">
+      {{- $tagList := slice -}}
+      {{- range .Params.tags -}}
+        {{- $tagList = $tagList | append (. | urlize) -}}
+      {{- end -}}
+      <li class="post-list-item" data-tags="{{ delimit $tagList "," }}">
         <time class="post-date" datetime="{{ .Date.Format "2006-01-02" }}">
           {{ .Date.Format "02 Jan" }}
         </time>
-        <a href="{{ .Permalink }}" class="post-title-link">{{ .Title }}</a>
+        <div class="post-list-info">
+          <a href="{{ .Permalink }}" class="post-title-link">{{ .Title }}</a>
+          {{- with .Params.tags }}
+          <span class="post-list-tags">
+            {{- range . }}
+            <a href="/posts/?tag={{ . | urlize }}" class="post-list-tag">#{{ . }}</a>
+            {{- end }}
+          </span>
+          {{- end }}
+        </div>
       </li>
       {{- end }}
     </ul>
   </div>
   {{- end }}
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const filterButtons = document.querySelectorAll('.tag-filter-container .tag-item');
+      const postItems = document.querySelectorAll('.post-list-item');
+      const archiveYears = document.querySelectorAll('.archive-year');
+
+      function applyFilter(filterValue) {
+        // Find and activate the correct button
+        let targetButton = Array.from(filterButtons).find(btn => btn.getAttribute('data-filter') === filterValue);
+        if (!targetButton) targetButton = filterButtons[0]; // fallback to 'all'
+
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        targetButton.classList.add('active');
+
+        const filter = targetButton.getAttribute('data-filter');
+
+        // Filter posts
+        postItems.forEach(item => {
+          if (filter === 'all') {
+            item.classList.remove('hidden');
+          } else {
+            const tags = item.getAttribute('data-tags') ? item.getAttribute('data-tags').split(',') : [];
+            if (tags.includes(filter)) {
+              item.classList.remove('hidden');
+            } else {
+              item.classList.add('hidden');
+            }
+          }
+        });
+
+        // Hide empty years
+        archiveYears.forEach(yearDiv => {
+          const visiblePosts = yearDiv.querySelectorAll('.post-list-item:not(.hidden)');
+          if (visiblePosts.length === 0) {
+            yearDiv.classList.add('hidden');
+          } else {
+            yearDiv.classList.remove('hidden');
+          }
+        });
+      }
+
+      filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          applyFilter(button.getAttribute('data-filter'));
+          
+          // Update URL without reloading
+          const url = new URL(window.location);
+          if (button.getAttribute('data-filter') === 'all') {
+            url.searchParams.delete('tag');
+          } else {
+            url.searchParams.set('tag', button.getAttribute('data-filter'));
+          }
+          window.history.pushState({}, '', url);
+        });
+      });
+
+      // Check URL params on load
+      const urlParams = new URLSearchParams(window.location.search);
+      const initialTag = urlParams.get('tag');
+      if (initialTag) {
+        applyFilter(initialTag);
+      }
+    });
+  </script>
+
 {{- else }}
   {{/* Generic page content */}}
   <div class="post-content">
