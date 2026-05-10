@@ -16,6 +16,26 @@
       {{- end }}
     </div>
   </div>
+
+  {{- $seriesTerms := .GetTerms "series" }}
+  {{- if $seriesTerms }}
+  {{- $series := index $seriesTerms 0 }}
+  <div class="series-nav">
+    <p>This post is a part of the <strong>{{ $series.Title }}</strong> series:</p>
+    <ul class="series-list">
+      {{- range $series.Pages.Reverse }}
+      <li>
+        {{- if eq .Permalink $.Permalink }}
+        <span class="current-series-item">→ {{ .Title }}</span>
+        {{- else }}
+        <a href="{{ .Permalink }}">{{ .Title }}</a>
+        {{- end }}
+      </li>
+      {{- end }}
+    </ul>
+  </div>
+  {{- end }}
+
   <div class="post-content">
     {{- if and (ne .Params.toc false) (gt (len .TableOfContents) 32) }}
     <details class="post-toc" open>

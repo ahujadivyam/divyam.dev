@@ -516,6 +516,37 @@ button.tag-item {
   border: 1px solid var(--border);
 }
 
+/* --- Series Navigation --- */
+.series-nav {
+  background: var(--bg-alt);
+  border-left: 4px solid var(--accent);
+  padding: 1.2rem 1.5rem;
+  margin-bottom: 2.5rem;
+  border-radius: 0 4px 4px 0;
+  font-size: 0.9rem;
+}
+
+.series-nav p {
+  margin-bottom: 0.8rem;
+  color: var(--fg-bright);
+}
+
+.series-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.series-list li {
+  margin-bottom: 0.4rem;
+  padding-left: 0;
+}
+
+.current-series-item {
+  color: var(--accent);
+  font-weight: 500;
+}
+
 /* --- Code --- */
 code {
   font-family: var(--font-mono);
