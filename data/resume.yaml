@@ -29,17 +29,18 @@ experience:
     end: Present
     stack:
       - Python
-      - JavaScript
       - TypeScript
+      - React
+      - Azure OpenAI
+      - Claude Code
+      - Copilot
       - Playwright
-      - Telemetry
     bullets:
-      - "Build, evaluate, and enhance AI-powered user experiences for the Excel Copilot team."
-      - "Architected a parallelized automation framework for synthetic data generation and evaluation, boosting pipeline throughput by **5x**."
-      - "Orchestrated the Responsible AI (RAI) pipeline, executing evaluation runs on new models to guarantee safe and deterministic AI outputs."
-      - "Acted as on-call Shield Engineer, monitoring pipeline health, triaging partner issues, and driving incident response for critical bugs."
-      - "Integrated comprehensive telemetry, structured logging, and observability dashboards into pipelines to maintain **>95%** reliability."
-      - "Engineered autonomous AI agents to automate repetitive tasks and optimize workflow efficiency."
+      - "Owned the end-to-end Responsible AI (RAI) evaluation pipeline, executing critical harms assessments to gate model releases. Engineered custom retry mechanisms and architectural optimizations, reducing average pipeline execution time by **50%**."
+      - "Engineered an automated synthetic data generation framework using LLMs, generating **70,000+** diverse queries and multi-step interaction trajectories across **20,000+** real-world Excel workbooks to power large-scale model evaluation pipelines."
+      - "Served as on-call Shield Engineer, owning incident triage and partner bug resolution across AI evaluation pipelines—maintaining **>95%** uptime by engineering comprehensive telemetry dashboards with an adjacent team."
+      - "Accelerated engineering velocity by building LLM-based agents for automated bug triage, PR summarization, and reviewer assignment."
+      - "Shipped high-impact performance optimizations and accessibility fixes directly to the core Microsoft Excel product."
 
   - company: Advanced Micro Devices (AMD)
     role: System Software Designer
@@ -47,19 +48,16 @@ experience:
     start: Aug 2022
     end: Feb 2025
     stack:
-      - C
-      - C++
-      - Java
+      - C/C++
+      - Java (OpenJDK)
       - Python
-      - React.js
-      - JavaScript
+      - Django
+      - React
+      - SQLite
     bullets:
-      - "Engineered an OpenJDK performance monitoring system, enabling early detection and mitigation of performance degradation."
-      - "Spearheaded the development of a visualization dashboard and RESTful API for OpenJDK telemetry, increasing data accessibility by **40%**."
-      - "Automated nightly Java benchmarking and tuning using machine learning models, achieving a **30%** reduction in manual effort."
-      - "Executed advanced Java tuning techniques, yielding a **2%** performance increase across High Performance Computing (HPC) servers."
-      - "Refactored and containerized legacy projects for cross-platform compatibility, driving a **90%** reduction in deployment errors."
-      - "Received the **Spotlight Award** for exceptional contributions to automation and nightly benchmark visualization."
+      - "Engineered a visualization dashboard and RESTful API for OpenJDK telemetry, increasing internal data accessibility by **40%**."
+      - "Automated nightly Java benchmarking and tuning pipelines using machine learning models, achieving a **30%** reduction in manual effort and earning the **Spotlight Award**."
+      - "Optimized JVM flags, GC policies, and runtime parameters for OpenJDK on High Performance Computing (HPC) servers, achieving a **2%** throughput improvement on SPECjbb benchmarks."
 
   - company: Chromium
     role: Google Summer of Code Contributor (Open Source Developer)
@@ -67,56 +65,53 @@ experience:
     start: May 2022
     end: Aug 2022
     stack:
-      - JavaScript
-      - TypeScript
-      - C
       - C++
-      - WebAudio
+      - JavaScript/TypeScript
       - WebAssembly
+      - WebAudio
       - WebWorkers
     bullets:
-      - "Researched and implemented optimal design patterns integrating the WebAudio API with WebAssembly and WebWorkers."
-      - "Designed and authored a high-performance, lock-free ring buffer library for real-time audio processing."
-    links:
-      - display: "github.com/ahujadivyam/gsoc-chromium-freequeue"
-        url: "https://github.com/ahujadivyam/gsoc-chromium-freequeue"
+      - "Engineered a high-performance, lock-free C++ ring buffer library for real-time audio processing, establishing optimal design patterns to integrate the WebAudio API with WebAssembly and WebWorkers."
 
 skills:
   - type: Programming Languages
     items:
       - C/C++
       - Python
-      - JavaScript/TypeScript
-      - Java
       - Go (Golang)
+      - Java
+      - JavaScript/TypeScript
       - Bash
-      - PHP
-  - type: Frameworks
+  - type: AI & Data
     items:
-      - React.js
-      - Next.js
-      - Express.js
-      - Django
-      - Flask
+      - PyTorch
+      - Azure OpenAI
+      - Antigravity
+      - Pandas
+      - NumPy
+      - Claude Code
+  - type: Backend & Web
+    items:
       - Node.js
-  - type: Tools/Platforms
+      - Django/Flask
+      - React/Next.js
+      - gRPC
+      - Playwright
+  - type: Infrastructure & Systems
     items:
-      - Git
-      - Docker
-      - Emscripten
-      - UNIX
-      - Linux
-      - POSIX
-      - Shell
       - Kubernetes
+      - Docker
+      - Linux/POSIX
       - WebAssembly
-      - WordPress
+      - WireGuard
+      - CI/CD
   - type: Databases
     items:
-      - MySQL
-      - MongoDB
       - PostgreSQL
       - Redis
+      - MySQL
+      - SQLite
+      - MongoDB
 
 projects:
   - name: "fastbin: a code sharing webapp"
@@ -127,6 +122,8 @@ projects:
       - PostgreSQL
       - Docker
       - Kubernetes
+    bullets:
+      - "Pastebin-style app with a Go backend, gRPC service layer, and Kubernetes deployment."
     links:
       - display: "git.divyam.dev/divyam/fastbin"
         url: "https://git.divyam.dev/divyam/fastbin"
@@ -140,6 +137,8 @@ projects:
       - Kubernetes
       - Rancher
       - MetalLB
+    bullets:
+      - "Self-hosted Kubernetes cluster with WireGuard tunnel to a public VPS for secure external access."
 
 education:
   - school: Deenbandhu Chhotu Ram University of Science and Technology
@@ -149,7 +148,7 @@ education:
     end: Aug 2022
 
 certifications:
-  - name: "MITx 6.86x: Machine Learning with Python-From Linear Models to Deep Learning"
+  - name: "MITx 6.86x — Machine Learning with Python: Linear Models to Deep Learning"
     url: "https://courses.edx.org/certificates/52e99c3c32d8470b9761c8327c4417ca"
   - name: "CS50AI: CS50's Introduction to Artificial Intelligence with Python"
     url: "https://courses.edx.org/certificates/686aaef0b47e438ba5ebd040e0f0b5fd"

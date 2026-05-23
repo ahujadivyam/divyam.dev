@@ -3,9 +3,9 @@
 
 #let data = yaml("../data/resume.yaml")
 
-#set page(paper: "a4", margin: (x: 0.5in, y: 0.4in))
+#set page(paper: "a4", margin: (x: 0.5in, y: 0.35in))
 #set document(title: data.name + "'s Resume", author: data.name)
-#set par(leading: 0.5em)
+#set par(leading: 0.55em)
 #set text(font: "Source Sans 3", size: 10pt)
 #set underline(offset: 2.5pt)
 #show heading: set text(weight: "semibold")
@@ -107,7 +107,7 @@
 // --- Header ---
 #text(size: 28pt, weight: "semibold")[#data.name] \
 #v(9pt, weak: true)
-#text(size: 14pt)[#data.role]
+#text(size: 14pt)[Systems & Software Engineer]
 
 // Contact links — first row
 #linksBar((
@@ -155,6 +155,9 @@
 = Projects
 #for p in data.projects {
   project(name: p.name, stack: p.at("stack", default: ()))[
+    #for bullet in p.at("bullets", default: ()) {
+      [- #md(bullet)]
+    }
     #let links = p.at("links", default: ())
     #if links.len() > 0 {
       [- #links.map(l => underline(link(l.url)[#l.display])).join(", ")]
@@ -172,4 +175,10 @@
     start: edu.start,
     end: edu.end,
   )[]
+}
+
+// --- Certifications ---
+= Certifications
+#for cert in data.certifications {
+  [- #underline(link(cert.url)[#cert.name])]
 }
