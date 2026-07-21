@@ -107,7 +107,7 @@
 // --- Header ---
 #text(size: 28pt, weight: "semibold")[#data.name] \
 #v(9pt, weak: true)
-#text(size: 14pt)[Systems & Software Engineer]
+#text(size: 14pt)[#data.role]
 
 // Contact links — first row
 #linksBar((

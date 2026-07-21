@@ -1,5 +1,5 @@
 name: Divyam Ahuja
-role: Software Engineer
+role: Systems & Software Engineer
 
 contact:
   phone:
@@ -38,9 +38,9 @@ experience:
     bullets:
       - "Owned the end-to-end Responsible AI (RAI) evaluation pipeline, executing critical harms assessments to gate model releases. Engineered custom retry mechanisms and architectural optimizations, reducing average pipeline execution time by **50%**."
       - "Engineered an automated synthetic data generation framework using LLMs, generating **70,000+** diverse queries and multi-step interaction trajectories across **20,000+** real-world Excel workbooks to power large-scale model evaluation pipelines."
-      - "Served as on-call Shield Engineer, owning incident triage and partner bug resolution across AI evaluation pipelines—maintaining **>95%** uptime by engineering comprehensive telemetry dashboards with an adjacent team."
-      - "Accelerated engineering velocity by building LLM-based agents for automated bug triage, PR summarization, and reviewer assignment."
-      - "Shipped high-impact performance optimizations and accessibility fixes directly to the core Microsoft Excel product."
+      - "Served as on-call Shield Engineer, driving infrastructure reliability across evaluation pipelines—resolving session instabilities, engineering deterministic failure classification, and automating bug workflows to maintain **>95%** uptime."
+      - "Spearheaded evaluation observability by building KQL-driven health dashboards, modularizing queries to monitor infrastructure failures, clean run rates, and overall platform reliability."
+      - "Designed and shipped RAI refusal handling for the UI-less agent evaluation path, ensuring policy refusals propagate correctly with full diagnostics and achieving evaluation parity between UI and headless execution modes."
 
   - company: Advanced Micro Devices (AMD)
     role: System Software Designer
@@ -71,7 +71,7 @@ experience:
       - WebAudio
       - WebWorkers
     bullets:
-      - "Engineered a high-performance, lock-free C++ ring buffer library for real-time audio processing, establishing optimal design patterns to integrate the WebAudio API with WebAssembly and WebWorkers."
+      - "Engineered a lock-free C++ ring buffer as a reference library for real-time audio streaming between WebAudio, WebAssembly, and WebWorkers, benchmarking multiple concurrency strategies."
 
 skills:
   - type: Programming Languages
@@ -80,38 +80,26 @@ skills:
       - Python
       - Go (Golang)
       - Java
-      - JavaScript/TypeScript
+      - TypeScript
       - Bash
-  - type: AI & Data
+  - type: Frameworks & Tools
     items:
       - PyTorch
       - Azure OpenAI
-      - Antigravity
-      - Pandas
-      - NumPy
-      - Claude Code
-  - type: Backend & Web
-    items:
-      - Node.js
-      - Django/Flask
       - React/Next.js
+      - Django/Flask
+      - Node.js
       - gRPC
       - Playwright
-  - type: Infrastructure & Systems
+  - type: Infrastructure
     items:
       - Kubernetes
       - Docker
       - Linux/POSIX
       - WebAssembly
       - WireGuard
-      - CI/CD
-  - type: Databases
-    items:
       - PostgreSQL
       - Redis
-      - MySQL
-      - SQLite
-      - MongoDB
 
 projects:
   - name: "fastbin: a code sharing webapp"
@@ -123,7 +111,7 @@ projects:
       - Docker
       - Kubernetes
     bullets:
-      - "Pastebin-style app with a Go backend, gRPC service layer, and Kubernetes deployment."
+      - "Code sharing service with a gRPC microservices architecture, containerized and live-deployed on a self-hosted Kubernetes cluster."
     links:
       - display: "git.divyam.dev/divyam/fastbin"
         url: "https://git.divyam.dev/divyam/fastbin"
@@ -138,7 +126,7 @@ projects:
       - Rancher
       - MetalLB
     bullets:
-      - "Self-hosted Kubernetes cluster with WireGuard tunnel to a public VPS for secure external access."
+      - "Personal infrastructure hosting containerized services, with WireGuard VPN tunneling to a public VPS for secure external access."
 
 education:
   - school: Deenbandhu Chhotu Ram University of Science and Technology
