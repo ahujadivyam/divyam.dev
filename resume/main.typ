@@ -176,9 +176,3 @@
     end: edu.end,
   )[]
 }
-
-// --- Certifications ---
-= Certifications
-#for cert in data.certifications {
-  [- #underline(link(cert.url)[#cert.name])]
-}
