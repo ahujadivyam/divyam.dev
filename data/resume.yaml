@@ -39,8 +39,9 @@ experience:
       - "Owned the end-to-end Responsible AI (RAI) evaluation pipeline, executing critical harms assessments to gate model releases. Engineered custom retry mechanisms and architectural optimizations, reducing average pipeline execution time by **50%**."
       - "Engineered an automated synthetic data generation framework using LLMs, generating **70,000+** diverse queries and multi-step interaction trajectories across **20,000+** real-world Excel workbooks to power large-scale model evaluation pipelines."
       - "Served as on-call Shield Engineer, driving infrastructure reliability across evaluation pipelines—resolving session instabilities, engineering deterministic failure classification, and automating bug workflows to maintain **>95%** uptime."
-      - "Spearheaded evaluation observability by building KQL-driven health dashboards, modularizing queries to monitor infrastructure failures, clean run rates, and overall platform reliability."
-      - "Designed and shipped RAI refusal handling for the UI-less agent evaluation path, ensuring policy refusals propagate correctly with full diagnostics and achieving evaluation parity between UI and headless execution modes."
+      - "Architected KQL-driven telemetry dashboards to monitor pipeline clean run rates and infrastructure failures, establishing single-pane-of-glass observability across the evaluation platform."
+      - "Shipped deterministic handling for RAI policy refusals in UI-less agent evaluations, ensuring robust diagnostic propagation and achieving 100% execution parity with UI-based paths."
+      - "Implemented full-stack performance optimizations and WCAG-compliant accessibility features to the core Microsoft Excel web client (React/TypeScript), eliminating UI rendering bottlenecks for millions of enterprise users."
 
   - company: Advanced Micro Devices (AMD)
     role: System Software Designer
