@@ -72,21 +72,9 @@
     {{- end }}
   </section>
 
-  <section class="resume-section">
-    <h2 class="resume-section-title">Skills</h2>
-    <div class="resume-skills">
-      {{- range $r.skills }}
-      <div class="resume-skill-group">
-        <h4 class="resume-skill-label">{{ .type }}</h4>
-        <span class="resume-skill-items">{{ delimit .items ", " }}</span>
-      </div>
-      {{- end }}
-    </div>
-  </section>
-
   {{- with $r.open_source }}
   <section class="resume-section">
-    <h2 class="resume-section-title">Open Source Contributions</h2>
+    <h2 class="resume-section-title">Open Source</h2>
     {{- range . }}
     <div class="resume-entry">
       <div class="resume-entry-header">
@@ -115,6 +103,18 @@
     {{- end }}
   </section>
   {{- end }}
+
+  <section class="resume-section">
+    <h2 class="resume-section-title">Skills</h2>
+    <div class="resume-skills">
+      {{- range $r.skills }}
+      <div class="resume-skill-group">
+        <h4 class="resume-skill-label">{{ .type }}</h4>
+        <span class="resume-skill-items">{{ delimit .items ", " }}</span>
+      </div>
+      {{- end }}
+    </div>
+  </section>
 
   <section class="resume-section">
     <h2 class="resume-section-title">Projects</h2>

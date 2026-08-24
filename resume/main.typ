@@ -147,12 +147,6 @@
   ]
 }
 
-// --- Skills ---
-= Skills
-#for skill in data.skills {
-  [#text(weight: "semibold")[#skill.type]: #skill.items.join(", ") \ ]
-}
-
 // --- Open Source ---
 #if "open_source" in data.keys() and data.open_source.len() > 0 {
   [= Open Source]
@@ -167,6 +161,12 @@
       }
     ]
   }
+}
+
+// --- Skills ---
+= Skills
+#for skill in data.skills {
+  [#text(weight: "semibold")[#skill.type]: #skill.items.join(", ") \ ]
 }
 
 // --- Projects ---

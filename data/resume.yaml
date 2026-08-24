@@ -60,36 +60,6 @@ experience:
       - "Automated nightly Java benchmarking and tuning pipelines using machine learning models, achieving a **30%** reduction in manual effort and earning the **Spotlight Award**."
       - "Profiled CPU and memory bottlenecks using Linux perf; optimized JVM flags, GC policies, and runtime parameters on HPC servers to achieve a **2%** throughput improvement on SPECjbb benchmarks."
 
-skills:
-  - type: Programming Languages
-    items:
-      - C/C++
-      - Python
-      - Go (Golang)
-      - Java
-      - Kotlin
-      - TypeScript
-      - Bash
-  - type: Frameworks & Tools
-    items:
-      - PyTorch
-      - Azure OpenAI
-      - Android SDK / NDK
-      - React/Next.js
-      - Django/Flask
-      - Node.js
-      - gRPC
-      - Playwright
-  - type: Infrastructure
-    items:
-      - Kubernetes
-      - Docker
-      - Linux/POSIX
-      - WebAssembly
-      - WireGuard
-      - PostgreSQL
-      - Redis
-
 open_source:
   - name: "Chromium (Google Summer of Code)"
     stack:
@@ -125,6 +95,36 @@ open_source:
     links:
       - display: "github.com/processing/p5.js"
         url: "https://github.com/processing/p5.js"
+
+skills:
+  - type: Programming Languages
+    items:
+      - C/C++
+      - Python
+      - Go (Golang)
+      - Java
+      - Kotlin
+      - TypeScript
+      - Bash
+  - type: Frameworks & Tools
+    items:
+      - PyTorch
+      - Azure OpenAI
+      - Android SDK / NDK
+      - React/Next.js
+      - Django/Flask
+      - Node.js
+      - gRPC
+      - Playwright
+  - type: Infrastructure
+    items:
+      - Kubernetes
+      - Docker
+      - Linux/POSIX
+      - WebAssembly
+      - WireGuard
+      - PostgreSQL
+      - Redis
 
 projects:
   - name: "fastbin: a code sharing webapp"
