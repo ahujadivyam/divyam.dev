@@ -3,13 +3,13 @@
 
 #let data = yaml("../data/resume.yaml")
 
-#set page(paper: "a4", margin: (x: 0.5in, y: 0.35in))
+#set page(paper: "a4", margin: (x: 0.45in, y: 0.3in))
 #set document(title: data.name + "'s Resume", author: data.name)
-#set par(leading: 0.55em)
-#set text(font: "Source Sans 3", size: 10pt)
-#set underline(offset: 2.5pt)
+#set par(leading: 0.5em)
+#set text(font: "Source Sans 3", size: 9.5pt)
+#set underline(offset: 2pt)
 #show heading: set text(weight: "semibold")
-#show heading: it => { v(4pt); it; v(2pt) }
+#show heading: it => { v(3pt); it; v(1.5pt) }
 
 // --- Markdown bold **text** → Typst bold *text* ---
 #let md(s) = {
@@ -69,6 +69,12 @@
   body
 }
 
+// --- Open Source entry ---
+#let openSourceItem(body, name: "", role: "", stack: ()) = {
+  text(weight: "semibold")[#name] + if role != "" [ (#role)] + if stack.len() > 0 [ | #stack.join(", ")]
+  body
+}
+
 // --- Project entry ---
 #let project(body, name: "", stack: ()) = {
   text(weight: "semibold")[#name] + if stack.len() > 0 {
@@ -109,16 +115,12 @@
 #v(9pt, weak: true)
 #text(size: 14pt)[#data.role]
 
-// Contact links — first row
+// Contact links
 #linksBar((
   (icon: "phone", url: data.contact.phone.url, display: data.contact.phone.display),
   (icon: "email", url: data.contact.email.url),
   (icon: "website", url: data.contact.website.url, display: data.contact.website.display),
   (icon: "linkedin", url: data.contact.linkedin.url, display: data.contact.linkedin.display),
-))
-#linebreak()
-// Contact links — second row
-#linksBar((
   (icon: "git", url: data.contact.git.url, display: data.contact.git.display),
   (icon: "github", url: data.contact.github.url, display: data.contact.github.display),
 ))
@@ -149,6 +151,22 @@
 = Skills
 #for skill in data.skills {
   [#text(weight: "semibold")[#skill.type]: #skill.items.join(", ") \ ]
+}
+
+// --- Open Source ---
+#if "open_source" in data.keys() and data.open_source.len() > 0 {
+  [= Open Source]
+  for os in data.open_source {
+    openSourceItem(name: os.name, role: os.at("role", default: ""), stack: os.at("stack", default: ()))[
+      #for bullet in os.at("bullets", default: ()) {
+        [- #md(bullet)]
+      }
+      #let links = os.at("links", default: ())
+      #if links.len() > 0 {
+        [- #links.map(l => underline(link(l.url)[#l.display])).join(", ")]
+      }
+    ]
+  }
 }
 
 // --- Projects ---

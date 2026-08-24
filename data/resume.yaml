@@ -30,18 +30,17 @@ experience:
     stack:
       - Python
       - TypeScript
+      - Docker
+      - Azure
       - React
-      - Azure OpenAI
-      - Claude Code
-      - Copilot
       - Playwright
     bullets:
-      - "Owned the end-to-end Responsible AI (RAI) evaluation pipeline, executing critical harms assessments to gate model releases. Engineered custom retry mechanisms and architectural optimizations, reducing average pipeline execution time by **50%**."
-      - "Engineered an automated synthetic data generation framework using LLMs, generating **70,000+** diverse queries and multi-step interaction trajectories across **20,000+** real-world Excel workbooks to power large-scale model evaluation pipelines."
-      - "Served as on-call Shield Engineer, driving infrastructure reliability across evaluation pipelines—resolving session instabilities, engineering deterministic failure classification, and automating bug workflows to maintain **>95%** uptime."
-      - "Architected KQL-driven telemetry dashboards to monitor pipeline clean run rates and infrastructure failures, establishing single-pane-of-glass observability across the evaluation platform."
-      - "Shipped deterministic handling for RAI policy refusals in UI-less agent evaluations, ensuring robust diagnostic propagation and achieving 100% execution parity with UI-based paths."
-      - "Implemented full-stack performance optimizations and WCAG-compliant accessibility features to the core Microsoft Excel web client (React/TypeScript), eliminating UI rendering bottlenecks for millions of enterprise users."
+      - "Owned the end-to-end Responsible AI (RAI) evaluation pipeline gating model releases; optimized execution latency by **50%** through asynchronous worker pools, intelligent request batching, and custom retry algorithms."
+      - "Onboarded next-generation multimodal AI agents into the core evaluation platform, designing pluggable backend adapters, isolated container sandboxes (Docker), and concurrent distributed cloud runtimes with robust IPC and telemetry capture."
+      - "Designed and scaled an automated synthetic data engine orchestrating parallel LLM workers; modeled complex spreadsheet state graphs to generate **70,000+** multi-step interaction trajectories across **20,000+** enterprise workbooks."
+      - "Served as on-call engineer driving infrastructure reliability across evaluation pipelines—resolving live-site instabilities, engineering deterministic failure classification, and automating bug workflows to maintain **>95%** uptime."
+      - "Designed real-time telemetry ingestion pipelines and KQL aggregations processing **millions** of pipeline events daily, establishing single-pane observability dashboards and automated root-cause triage."
+      - "Optimized client-side rendering pipelines and state management for the core Microsoft Excel web client (React/TypeScript), eliminating UI rendering bottlenecks and meeting WCAG accessibility standards for millions of enterprise users."
 
   - company: Advanced Micro Devices (AMD)
     role: System Software Designer
@@ -51,28 +50,15 @@ experience:
     stack:
       - C/C++
       - Java (OpenJDK)
+      - Linux perf
       - Python
       - Django
       - React
       - SQLite
     bullets:
-      - "Engineered a visualization dashboard and RESTful API for OpenJDK telemetry, increasing internal data accessibility by **40%**."
+      - "Engineered a high-throughput visualization dashboard and RESTful API for OpenJDK telemetry, optimizing database queries to increase internal data accessibility by **40%**."
       - "Automated nightly Java benchmarking and tuning pipelines using machine learning models, achieving a **30%** reduction in manual effort and earning the **Spotlight Award**."
-      - "Optimized JVM flags, GC policies, and runtime parameters for OpenJDK on High Performance Computing (HPC) servers, achieving a **2%** throughput improvement on SPECjbb benchmarks."
-
-  - company: Chromium
-    role: Google Summer of Code Contributor (Open Source Developer)
-    location: Remote
-    start: May 2022
-    end: Aug 2022
-    stack:
-      - C++
-      - JavaScript/TypeScript
-      - WebAssembly
-      - WebAudio
-      - WebWorkers
-    bullets:
-      - "Engineered a lock-free C++ ring buffer as a reference library for real-time audio streaming between WebAudio, WebAssembly, and WebWorkers, benchmarking multiple concurrency strategies."
+      - "Profiled CPU and memory bottlenecks using Linux perf; optimized JVM flags, GC policies, and runtime parameters on HPC servers to achieve a **2%** throughput improvement on SPECjbb benchmarks."
 
 skills:
   - type: Programming Languages
@@ -81,12 +67,14 @@ skills:
       - Python
       - Go (Golang)
       - Java
+      - Kotlin
       - TypeScript
       - Bash
   - type: Frameworks & Tools
     items:
       - PyTorch
       - Azure OpenAI
+      - Android SDK / NDK
       - React/Next.js
       - Django/Flask
       - Node.js
@@ -102,6 +90,42 @@ skills:
       - PostgreSQL
       - Redis
 
+open_source:
+  - name: "Chromium (Google Summer of Code)"
+    stack:
+      - C++
+      - WebAssembly
+      - WebAudio
+      - WebWorkers
+    bullets:
+      - "Engineered a lock-free C++ ring buffer as a reference library for real-time audio streaming between WebAudio, WebAssembly, and WebWorkers, benchmarking multiple concurrency strategies."
+
+  - name: "The Tor Project"
+    role: Contributor
+    stack:
+      - Kotlin
+      - Android SDK
+      - Rust
+      - JavaScript
+      - VPNService
+    bullets:
+      - "Contributed across Tor Project client and web applications; engineered routing resilience and lifecycle management for the Tor VPN Android app, and developed enhancements for Tor Web platforms."
+    links:
+      - display: "gitlab.torproject.org/tpo"
+        url: "https://gitlab.torproject.org/tpo"
+
+  - name: "p5.js (Processing Foundation)"
+    role: Contributor
+    stack:
+      - JavaScript
+      - HTML5 Canvas
+      - WebGL
+    bullets:
+      - "Contributed core library improvements and rendering fixes to p5.js, optimizing canvas event handling and cross-browser graphic performance."
+    links:
+      - display: "github.com/processing/p5.js"
+        url: "https://github.com/processing/p5.js"
+
 projects:
   - name: "fastbin: a code sharing webapp"
     stack:
@@ -112,7 +136,7 @@ projects:
       - Docker
       - Kubernetes
     bullets:
-      - "Code sharing service with a gRPC microservices architecture, containerized and live-deployed on a self-hosted Kubernetes cluster."
+      - "Built a high-performance code sharing backend in Go utilizing gRPC Protobuf microservices, PostgreSQL with connection pooling and optimized indexing, containerized with Docker and deployed on Kubernetes."
     links:
       - display: "git.divyam.dev/divyam/fastbin"
         url: "https://git.divyam.dev/divyam/fastbin"
@@ -127,7 +151,7 @@ projects:
       - Rancher
       - MetalLB
     bullets:
-      - "Personal infrastructure hosting containerized services, with WireGuard VPN tunneling to a public VPS for secure external access."
+      - "Personal infrastructure hosting containerized services with WireGuard VPN tunneling, MetalLB load balancing, and Rancher-managed Kubernetes, enabling secure, high-availability external access."
 
 education:
   - school: Deenbandhu Chhotu Ram University of Science and Technology

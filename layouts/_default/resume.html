@@ -1,5 +1,5 @@
 {{ define "main" }}
-{{- $r := site.Data.resume -}}
+{{- $r := hugo.Data.resume -}}
 <div class="resume-page">
   <div class="resume-header">
     <h1 class="resume-name">{{ $r.name }}</h1>
@@ -83,6 +83,38 @@
       {{- end }}
     </div>
   </section>
+
+  {{- with $r.open_source }}
+  <section class="resume-section">
+    <h2 class="resume-section-title">Open Source Contributions</h2>
+    {{- range . }}
+    <div class="resume-entry">
+      <div class="resume-entry-header">
+        <div>
+          <h3 class="resume-entry-title">{{ .name }}{{ with .role }} ({{ . }}){{ end }}</h3>
+        </div>
+      </div>
+      {{- with .stack }}
+      <div class="resume-tech-stack">{{ delimit . ", " }}</div>
+      {{- end }}
+      {{- with .bullets }}
+      <ul class="resume-entry-details">
+        {{- range . }}
+        <li>{{ . | markdownify }}</li>
+        {{- end }}
+      </ul>
+      {{- end }}
+      {{- with .links }}
+      <div class="resume-entry-links">
+        {{- range . }}
+        <a href="{{ .url }}" target="_blank">{{ .display }}</a>
+        {{- end }}
+      </div>
+      {{- end }}
+    </div>
+    {{- end }}
+  </section>
+  {{- end }}
 
   <section class="resume-section">
     <h2 class="resume-section-title">Projects</h2>
