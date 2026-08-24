@@ -128,6 +128,13 @@
       {{- with .stack }}
       <div class="resume-tech-stack">{{ delimit . ", " }}</div>
       {{- end }}
+      {{- with .bullets }}
+      <ul class="resume-entry-details">
+        {{- range . }}
+        <li>{{ . | markdownify }}</li>
+        {{- end }}
+      </ul>
+      {{- end }}
       {{- with .links }}
       <div class="resume-entry-links">
         {{- range . }}
