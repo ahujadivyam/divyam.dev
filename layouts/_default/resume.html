@@ -40,6 +40,12 @@
     </div>
   </div>
 
+  {{- with $r.summary }}
+  <section class="resume-section">
+    <p class="resume-summary" style="margin-top: 1rem; margin-bottom: 0;">{{ . }}</p>
+  </section>
+  {{- end }}
+
   <section class="resume-section">
     <h2 class="resume-section-title">Experience</h2>
     {{- range $r.experience }}
@@ -160,6 +166,17 @@
     </div>
     {{- end }}
   </section>
+
+  {{- with $r.certifications }}
+  <section class="resume-section">
+    <h2 class="resume-section-title">Certifications</h2>
+    <ul class="resume-entry-details">
+      {{- range . }}
+      <li><a href="{{ .url }}" target="_blank" rel="noopener noreferrer">{{ .name }}</a></li>
+      {{- end }}
+    </ul>
+  </section>
+  {{- end }}
 
   <div class="resume-download">
     <a href="/resume.pdf" class="resume-download-btn">↓ Download PDF</a>

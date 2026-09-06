@@ -1,5 +1,7 @@
 name: Divyam Ahuja
 role: Systems & Software Engineer
+summary: "Systems & Software Engineer specializing in high-performance backend infrastructure, scalable automation platforms, and system-level performance tuning. Demonstrated expertise in architecting resilient distributed systems, complemented by a strong track record of contributions to massive open-source codebases."
+
 
 contact:
   phone:
@@ -35,12 +37,12 @@ experience:
       - React
       - Playwright
     bullets:
+      - "Engineer and evaluate AI-powered experiences across multimodal models and agentic workflows for the Excel Copilot team."
       - "Owned the end-to-end Responsible AI (RAI) evaluation pipeline gating model releases; optimized execution latency by **50%** through asynchronous worker pools, intelligent request batching, and custom retry algorithms."
-      - "Onboarded next-generation multimodal AI agents into the core evaluation platform, designing pluggable backend adapters, isolated container sandboxes (Docker), and concurrent distributed cloud runtimes with robust IPC and telemetry capture."
-      - "Designed and scaled an automated synthetic data engine orchestrating parallel LLM workers; modeled complex spreadsheet state graphs to generate **70,000+** multi-step interaction trajectories across **20,000+** enterprise workbooks."
-      - "Served as on-call engineer driving infrastructure reliability across evaluation pipelines—resolving live-site instabilities, engineering deterministic failure classification, and automating bug workflows to maintain **>95%** uptime."
-      - "Designed real-time telemetry ingestion pipelines and KQL aggregations processing **millions** of pipeline events daily, establishing single-pane observability dashboards and automated root-cause triage."
-      - "Optimized client-side rendering pipelines and state management for the core Microsoft Excel web client (React/TypeScript), eliminating UI rendering bottlenecks and meeting WCAG accessibility standards for millions of enterprise users."
+      - "Onboarded next-generation multimodal AI agents into the core evaluation platform, designing pluggable backend adapters, isolated container sandboxes (Docker), and concurrent distributed cloud runtimes."
+      - "Designed and implemented a parallelized automation framework for synthetic data generation and evaluation; boosted throughput by **5x** and generated **70,000+** trajectories across **20,000+** enterprise workbooks."
+      - "Served as on-call engineer driving infrastructure reliability across evaluation pipelines—triaging partner team issues, resolving live-site instabilities, and handling incident response to maintain **>95%** reliability."
+      - "Integrated comprehensive telemetry pipelines and KQL aggregations processing **millions** of daily events, establishing single-pane system health dashboards and automated triage."
 
   - company: Advanced Micro Devices (AMD)
     role: System Software Designer
@@ -55,10 +57,13 @@ experience:
       - Django
       - React
       - SQLite
+      - Docker
     bullets:
-      - "Engineered a high-throughput visualization dashboard and RESTful API for OpenJDK telemetry, optimizing database queries to increase internal data accessibility by **40%**."
-      - "Automated nightly Java benchmarking and tuning pipelines using machine learning models, achieving a **30%** reduction in manual effort and earning the **Spotlight Award**."
-      - "Profiled CPU and memory bottlenecks using Linux perf; optimized JVM flags, GC policies, and runtime parameters on HPC servers to achieve a **2%** throughput improvement on SPECjbb benchmarks."
+      - "Engineered an OpenJDK performance monitoring and telemetry platform (Django, React, SQLite) to track nightly SPECjbb runs, enabling early detection and isolation of performance regressions."
+      - "Automated systems to benchmark and tune Java nightly using machine learning models, achieving a **30%** reduction in manual effort and improved parameter accuracy."
+      - "Applied advanced Java tuning techniques and profiled CPU/memory bottlenecks with Linux perf, yielding a **2%** throughput increase on SPECjbb benchmarks across High Performance Computing (HPC) servers."
+      - "Refactored and containerized legacy benchmarking workflows with Docker for cross-platform execution, driving a **90%** reduction in deployment and environment errors."
+      - "Awarded the **Spotlight Award** for exceptional contributions to automation, tuning, and nightly benchmark visualization."
 
 open_source:
   - name: "Chromium (Google Summer of Code)"
@@ -69,6 +74,9 @@ open_source:
       - WebWorkers
     bullets:
       - "Engineered a lock-free C++ ring buffer as a reference library for real-time audio streaming between WebAudio, WebAssembly, and WebWorkers, benchmarking multiple concurrency strategies."
+    links:
+      - display: "summerofcode.withgoogle.com"
+        url: "https://summerofcode.withgoogle.com/archive/2022/projects/8aeeJZr6"
 
   - name: "The Tor Project"
     role: Contributor
@@ -115,19 +123,23 @@ skills:
       - Django/Flask
       - Node.js
       - gRPC
+      - Emscripten
       - Playwright
-  - type: Infrastructure
+  - type: Infrastructure & Databases
     items:
       - Kubernetes
       - Docker
       - Linux/POSIX
+      - PostgreSQL
+      - MongoDB
+      - Redis
+      - MySQL
+      - SQLite
       - WebAssembly
       - WireGuard
-      - PostgreSQL
-      - Redis
 
 projects:
-  - name: "fastbin: a code sharing webapp"
+  - name: "Fastbin: A Code Sharing Webapp"
     stack:
       - HTMX
       - Go (Golang)

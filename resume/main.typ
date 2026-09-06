@@ -3,13 +3,13 @@
 
 #let data = yaml("../data/resume.yaml")
 
-#set page(paper: "a4", margin: (x: 0.45in, y: 0.3in))
+#set page(paper: "a4", margin: (x: 0.5in, y: 0.45in))
 #set document(title: data.name + "'s Resume", author: data.name)
-#set par(leading: 0.5em)
-#set text(font: "Source Sans 3", size: 9.5pt)
+#set par(leading: 0.55em)
+#set text(font: "Source Sans 3", size: 10pt)
 #set underline(offset: 2pt)
 #show heading: set text(weight: "semibold")
-#show heading: it => { v(3pt); it; v(1.5pt) }
+#show heading: it => { v(4pt); it; v(2pt) }
 
 // --- Markdown bold **text** → Typst bold *text* ---
 #let md(s) = {
@@ -126,6 +126,11 @@
 ))
 #line(length: 100%)
 
+#if "summary" in data.keys() {
+  [#data.summary]
+  v(8pt, weak: true)
+}
+
 // --- Experience ---
 = Experience
 
@@ -163,6 +168,7 @@
   }
 }
 
+
 // --- Skills ---
 = Skills
 #for skill in data.skills {
@@ -193,4 +199,12 @@
     start: edu.start,
     end: edu.end,
   )[]
+}
+
+// --- Certifications ---
+#if "certifications" in data.keys() and data.certifications.len() > 0 {
+  [= Certifications]
+  for cert in data.certifications {
+    [- #link(cert.url)[#cert.name]]
+  }
 }
