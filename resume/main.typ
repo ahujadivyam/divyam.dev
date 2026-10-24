@@ -13,7 +13,7 @@
 
 // --- Markdown bold **text** → Typst bold *text* ---
 #let md(s) = {
-  let converted = s.replace(regex("\*\*(.+?)\*\*"), m => "*" + m.captures.at(0) + "*")
+  let converted = s.replace(regex("\*\*(.+?)\*\*"), m => "*" + m.captures.at(0) + "*").replace("<", "\\<")
   eval(converted, mode: "markup")
 }
 

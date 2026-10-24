@@ -37,12 +37,13 @@ experience:
       - React
       - Playwright
     bullets:
-      - "Engineer and evaluate AI-powered experiences across multimodal models and agentic workflows for the Excel Copilot team."
+      - "Built and modernized **large-scale AI evaluation platform and infrastructure** for multimodal models and agentic workflows across the Microsoft Office platform."
+      - "Optimized the observability platform and dashboard to analyze **~1M** telemetry and evaluation records, enabling large-scale reliability, performance, and quality monitoring."
       - "Owned the end-to-end Responsible AI (RAI) evaluation pipeline gating model releases; optimized execution latency by **50%** through asynchronous worker pools, intelligent request batching, and custom retry algorithms."
-      - "Onboarded next-generation multimodal AI agents into the core evaluation platform, designing pluggable backend adapters, isolated container sandboxes (Docker), and concurrent distributed cloud runtimes."
-      - "Designed and implemented a parallelized automation framework for synthetic data generation and evaluation; boosted throughput by **5x** and generated **70,000+** trajectories across **20,000+** enterprise workbooks."
-      - "Served as on-call engineer driving infrastructure reliability across evaluation pipelines—triaging partner team issues, resolving live-site instabilities, and handling incident response to maintain **>95%** reliability."
-      - "Integrated comprehensive telemetry pipelines and KQL aggregations processing **millions** of daily events, establishing single-pane system health dashboards and automated triage."
+      - "Hardened distributed workloads across the evaluation lifecycle against **transient service failures, authentication expiry, timeouts, and resource exhaustion**, reaching **99%** reliability and **<1%** infrastructure failure rate."
+      - "Migrated from JSON-based configurations to typed configurations, reducing configuration errors by **25%** and improving overall ease of maintenance."
+      - "Built and enhanced **automated failure detection, investigation and PR creation agentic workflows**, reducing manual triage effort by **95%** and improving diagnosis of infrastructure and application-level evaluation failures."
+      - "Contributed to the internal Knowledge Base and Agentic Workflows, accelerating day-to-day platform operations and engineering velocity."
 
   - company: Advanced Micro Devices (AMD)
     role: System Software Designer
