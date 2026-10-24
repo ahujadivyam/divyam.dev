@@ -5,11 +5,11 @@
 
 #set page(paper: "a4", margin: (x: 0.5in, y: 0.45in))
 #set document(title: data.name + "'s Resume", author: data.name)
-#set par(leading: 0.55em)
+#set par(leading: 0.45em)
 #set text(font: "Source Sans 3", size: 10pt)
 #set underline(offset: 2pt)
 #show heading: set text(weight: "semibold")
-#show heading: it => { v(4pt); it; v(2pt) }
+#show heading: it => { v(2pt); it; v(1pt) }
 
 // --- Markdown bold **text** → Typst bold *text* ---
 #let md(s) = {
@@ -111,25 +111,28 @@
 // =============================================
 
 // --- Header ---
-#text(size: 28pt, weight: "semibold")[#data.name] \
-#v(9pt, weak: true)
-#text(size: 14pt)[#data.role]
+#align(center)[
+  #text(size: 28pt, weight: "semibold")[#data.name]
+]
+#v(10pt, weak: true)
 
 // Contact links
-#linksBar((
-  (icon: "phone", url: data.contact.phone.url, display: data.contact.phone.display),
-  (icon: "email", url: data.contact.email.url),
-  (icon: "website", url: data.contact.website.url, display: data.contact.website.display),
-  (icon: "linkedin", url: data.contact.linkedin.url, display: data.contact.linkedin.display),
-  (icon: "git", url: data.contact.git.url, display: data.contact.git.display),
-  (icon: "github", url: data.contact.github.url, display: data.contact.github.display),
-))
+#align(center)[
+  #linksBar((
+    (icon: "phone", url: data.contact.phone.url, display: data.contact.phone.display),
+    (icon: "email", url: data.contact.email.url),
+    (icon: "website", url: data.contact.website.url, display: data.contact.website.display),
+    (icon: "linkedin", url: data.contact.linkedin.url, display: data.contact.linkedin.display),
+    (icon: "git", url: data.contact.git.url, display: data.contact.git.display),
+    (icon: "github", url: data.contact.github.url, display: data.contact.github.display),
+  ))
+]
 #line(length: 100%)
 
-#if "summary" in data.keys() {
-  [#data.summary]
-  v(8pt, weak: true)
-}
+// #if "summary" in data.keys() {
+//   [#data.summary]
+//   v(8pt, weak: true)
+// }
 
 // --- Experience ---
 = Experience
@@ -152,21 +155,21 @@
   ]
 }
 
-// --- Open Source ---
-#if "open_source" in data.keys() and data.open_source.len() > 0 {
-  [= Open Source]
-  for os in data.open_source {
-    openSourceItem(name: os.name, role: os.at("role", default: ""), stack: os.at("stack", default: ()))[
-      #for bullet in os.at("bullets", default: ()) {
-        [- #md(bullet)]
-      }
-      #let links = os.at("links", default: ())
-      #if links.len() > 0 {
-        [- #links.map(l => underline(link(l.url)[#l.display])).join(", ")]
-      }
-    ]
-  }
-}
+// // --- Open Source (hidden from PDF, shown on website) ---
+// #if "open_source" in data.keys() and data.open_source.len() > 0 {
+//   [= Open Source]
+//   for os in data.open_source {
+//     openSourceItem(name: os.name, role: os.at("role", default: ""), stack: os.at("stack", default: ()))[
+//       #for bullet in os.at("bullets", default: ()) {
+//         [- #md(bullet)]
+//       }
+//       #let links = os.at("links", default: ())
+//       #if links.len() > 0 {
+//         [- #links.map(l => underline(link(l.url)[#l.display])).join(", ")]
+//       }
+//     ]
+//   }
+// }
 
 
 // --- Skills ---
@@ -201,10 +204,10 @@
   )[]
 }
 
-// --- Certifications ---
-#if "certifications" in data.keys() and data.certifications.len() > 0 {
-  [= Certifications]
-  for cert in data.certifications {
-    [- #link(cert.url)[#cert.name]]
-  }
-}
+// // --- Certifications (hidden from PDF, shown on website) ---
+// #if "certifications" in data.keys() and data.certifications.len() > 0 {
+//   [= Certifications]
+//   for cert in data.certifications {
+//     [- #link(cert.url)[#cert.name]]
+//   }
+// }

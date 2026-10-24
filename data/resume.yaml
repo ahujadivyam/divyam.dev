@@ -65,8 +65,11 @@ experience:
       - "Refactored and containerized legacy benchmarking workflows with Docker for cross-platform execution, driving a **90%** reduction in deployment and environment errors."
       - "Awarded the **Spotlight Award** for exceptional contributions to automation, tuning, and nightly benchmark visualization."
 
-open_source:
-  - name: "Chromium (Google Summer of Code)"
+  - company: Chromium
+    role: Google Summer of Code
+    location: Remote
+    start: Jun 2022
+    end: Aug 2022
     stack:
       - C++
       - WebAssembly
@@ -78,6 +81,7 @@ open_source:
       - display: "summerofcode.withgoogle.com"
         url: "https://summerofcode.withgoogle.com/archive/2022/projects/8aeeJZr6"
 
+open_source:
   - name: "The Tor Project"
     role: Contributor
     stack:
