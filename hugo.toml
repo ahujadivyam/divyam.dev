@@ -58,7 +58,6 @@ title = "Divyam Ahuja"
   [[params.projects]]
     name = "Homelab"
     url = "#"
-    article = "/posts/debugging-k8s-disk-pressure-homelab/"
     description = "Self-hosted high-availability infrastructure on Raspberry Pi 5"
     tags = ["Kubernetes", "WireGuard", "Rancher", "MetalLB"]
 
