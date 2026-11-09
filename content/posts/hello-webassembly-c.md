@@ -5,17 +5,15 @@ draft: false
 tags: ["WebAssembly", "C", "C++", "Emscripten"]
 ---
 
-If you've spent any time working on performance-critical web applications, you've probably hit the performance ceiling of JavaScript. I ran into this heavily during my Google Summer of Code project working on Chromium's audio processing pipeline. We needed near-native speeds to process audio without stuttering, and standard JavaScript just wasn't going to cut it.
+If you've spent any time working on performance-critical web applications, you've probably hit the performance ceiling of JavaScript. I ran into this heavily during my Google Summer of Code project working on Chromium's audio processing pipeline. We needed near-native speeds to process audio buffers without dropping frames, and standard JavaScript just wasn't going to cut it.
 
-Enter **WebAssembly** (Wasm). 
+That's where **WebAssembly** (Wasm) comes in. It's a low-level bytecode format designed to run inside the browser sandbox at near-native speeds. It lets you write performance-sensitive routines in C, C++, or Rust, compile them to a `.wasm` module, and call them directly from your JavaScript frontend.
 
-WebAssembly is essentially a low-level binary format that runs directly in the browser at near-native speeds. It lets us write code in systems languages like C, C++, or Rust, compile it, and run it right alongside our JavaScript. 
+Here's a minimal walkthrough of taking a plain C program, compiling it to Wasm, and running it in a browser.
 
-Today, I want to walk you through the absolute basics: taking a simple C program and running it in your browser. 
+## The Toolchain: Emscripten
 
-## The Magic Tool: Emscripten
-
-To bridge the gap between C/C++ and the web, we need a toolchain. The undisputed heavyweight champion here is **Emscripten**. It takes your C/C++ code, compiles it into a `.wasm` binary, and even generates the JavaScript "glue" code needed to load it into the browser.
+To compile C or C++ targeting the web, you need an LLVM toolchain that outputs WebAssembly instead of native x86/ARM machine code. The standard toolchain for this is **Emscripten**. It takes your C/C++ source, compiles it into a `.wasm` binary, and generates the JavaScript loader code that allocates memory and boots up the module.
 
 Let's get it installed. Open your terminal and run:
 
@@ -77,8 +75,8 @@ Now, open your browser and head to `http://localhost:8000/hello.html`. If everyt
 
 ## Wrapping up
 
-This is obviously just the tip of the iceberg. Printing a string is fun, but the real power of WebAssembly comes from porting massive C++ codebases (like audio engines, physics simulators, or databases) directly into the browser. 
+This is obviously just the tip of the iceberg. Printing a string is fun, but the real power of WebAssembly comes from porting real C++ codebases (like game engines, audio processors, or physics simulators) directly into the browser. 
 
-In future posts, I'll dive into more realistic use cases—like how I used Wasm and WebWorkers to build lock-free ring buffers for Chromium, passing complex memory structures back and forth between JavaScript and C++. 
+If you want to see a full interactive project in action, check out my follow-up post on [Porting a C++ Snake Game to the Browser with WebAssembly](/posts/snake-game-in-cpp-and-webassembly/).
 
 Until then, happy hacking!
