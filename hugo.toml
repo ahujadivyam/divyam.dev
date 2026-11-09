@@ -62,6 +62,24 @@ title = "Divyam Ahuja"
     tags = ["Kubernetes", "WireGuard", "Rancher", "MetalLB"]
 
   [[params.projects]]
+    name = "chip_eight.js"
+    url = "https://github.com/ahujadivyam/chip_eight.js"
+    description = "A browser-based CHIP-8 virtual machine and interpreter written in vanilla JavaScript"
+    tags = ["JavaScript", "Emulators", "Canvas", "WebAudio"]
+
+  [[params.projects]]
+    name = "snake_wasm"
+    url = "https://github.com/ahujadivyam/snake_wasm"
+    description = "Classic Snake game in C++ using olcPixelGameEngine, compiled to WebAssembly via Emscripten"
+    tags = ["C++", "WebAssembly", "Emscripten", "GameDev"]
+
+  [[params.projects]]
+    name = "cmake-emscripten-sdl2-boilerplate"
+    url = "https://github.com/ahujadivyam/cmake-emscripten-sdl2-boilerplate"
+    description = "Cross-platform boilerplate for building C++ apps targeting native desktop and WebAssembly"
+    tags = ["C++", "CMake", "Emscripten", "SDL2"]
+
+  [[params.projects]]
     name = "divyam.dev"
     url = "https://git.divyam.dev/divyam/divyam.dev"
     description = "This minimal, high-performance portfolio and blog"
