@@ -17,7 +17,7 @@ title = "Divyam Ahuja"
 [params]
   description = "Software Engineer"
   author = "Divyam Ahuja"
-  bio = "Software Engineer at Microsoft, working on the Excel Copilot team. I enjoy building side projects, tinkering with infrastructure, and deep-diving into performance optimization."
+  bio = "Software engineer at Microsoft working on Excel Copilot. I like building platforms, hacking on side projects, and figuring out how systems work under the hood."
   avatar = "/avatar.png"
   email = "ahujadivyam@gmail.com"
 
