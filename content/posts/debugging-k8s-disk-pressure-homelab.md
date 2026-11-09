@@ -162,3 +162,4 @@ A lot of people complain about Kubernetes being "overcomplicated for a homelab."
 But situations like this are a great reminder of why these mechanisms exist in the first place. Kubelet didn't crash, the Pi didn't lock up with a read-only filesystem, and SQLite didn't corrupt its database mid-write. The node saw danger, cordoned itself off gracefully, waited for human intervention to fix the underlying physical storage, and recovered autonomously the moment space was freed.
 
 Understanding the layers—from reverse proxy down through the container scheduler to local inode usage—turns a mysterious 502 into a logical, predictable sequence of dominoes to follow.
+
