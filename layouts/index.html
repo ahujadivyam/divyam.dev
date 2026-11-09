@@ -13,44 +13,54 @@
 {{- $posts := where .Site.RegularPages "Section" "posts" -}}
 {{- if $posts }}
 <section>
-  <h2 class="section-heading">Blog</h2>
-  {{- $byYear := $posts.GroupByDate "2006" -}}
-  {{- range $byYear }}
-  <div class="archive-year">
-    <h3 class="year-heading">{{ .Key }}</h3>
-    <ul class="post-list">
-      {{- range .Pages }}
-      <li class="post-list-item">
-        <time class="post-date" datetime="{{ .Date.Format "2006-01-02" }}">
-          {{ .Date.Format "02 Jan" }}
-        </time>
-        <div class="post-list-info">
-          <a href="{{ .Permalink }}" class="post-title-link">{{ .Title }}</a>
-          {{- with .Params.tags }}
-          <span class="post-list-tags">
-            {{- range . }}
-            <a href="/posts/?tag={{ . | urlize }}" class="post-list-tag">#{{ . }}</a>
-            {{- end }}
-          </span>
-          {{- end }}
-        </div>
-      </li>
-      {{- end }}
-    </ul>
+  <div class="section-title-bar">
+    <h2 class="section-heading">Recent Writing</h2>
+    <a href="/posts/" class="section-link">All posts →</a>
   </div>
-  {{- end }}
+  <ul class="post-list">
+    {{- range first 4 $posts }}
+    <li class="post-list-item">
+      <time class="post-date" datetime="{{ .Date.Format "2006-01-02" }}">
+        {{ .Date.Format "02 Jan 2006" }}
+      </time>
+      <div class="post-list-info">
+        <a href="{{ .Permalink }}" class="post-title-link">{{ .Title }}</a>
+        {{- with .Params.tags }}
+        <span class="post-list-tags">
+          {{- range . }}
+          <a href="/posts/?tag={{ . | urlize }}" class="post-list-tag">#{{ . }}</a>
+          {{- end }}
+        </span>
+        {{- end }}
+      </div>
+    </li>
+    {{- end }}
+  </ul>
 </section>
 {{- end }}
 
 {{- if .Site.Params.projects }}
 <section>
-  <h2 class="section-heading">Projects</h2>
+  <div class="section-title-bar">
+    <h2 class="section-heading">Featured Projects</h2>
+    <a href="/projects/" class="section-link">All projects →</a>
+  </div>
   <div class="projects-grid">
-    {{- range .Site.Params.projects }}
-    {{- if eq .url "#" }}
+    {{- range first 4 .Site.Params.projects }}
     <div class="project-card">
       <div class="project-card-inner">
-        <h3 class="project-card-name">{{ .name }}</h3>
+        <div class="project-card-header">
+          <h3 class="project-card-name">
+            {{- if eq .url "#" -}}
+              {{ .name }}
+            {{- else -}}
+              <a href="{{ .url }}" target="_blank" rel="noopener noreferrer">{{ .name }} <span class="project-arrow">↗</span></a>
+            {{- end -}}
+          </h3>
+          {{- with .article }}
+          <a href="{{ . }}" class="project-article-link">writeup ↗</a>
+          {{- end }}
+        </div>
         <p class="project-card-desc">{{ .description }}</p>
         {{- with .tags }}
         <div class="project-card-tags">
@@ -61,26 +71,7 @@
         {{- end }}
       </div>
     </div>
-    {{- else }}
-    <a href="{{ .url }}" class="project-card" target="_blank" rel="noopener noreferrer">
-      <div class="project-card-inner">
-        <h3 class="project-card-name">{{ .name }}</h3>
-        <p class="project-card-desc">{{ .description }}</p>
-        {{- with .tags }}
-        <div class="project-card-tags">
-          {{- range . }}
-          <span class="project-card-tag">{{ . }}</span>
-          {{- end }}
-        </div>
-        {{- end }}
-      </div>
-      <span class="project-card-arrow">→</span>
-    </a>
     {{- end }}
-    {{- end }}
-  </div>
-  <div style="margin-top: 1rem; text-align: right;">
-    <a href="/projects/" class="post-title-link">View all projects →</a>
   </div>
 </section>
 {{- end }}

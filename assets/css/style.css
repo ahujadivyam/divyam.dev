@@ -220,6 +220,31 @@ img {
 }
 
 /* --- Section Headings --- */
+.section-title-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 3rem 0 1.5rem;
+  gap: 1rem;
+}
+
+.section-title-bar .section-heading {
+  margin: 0;
+  flex: 1;
+}
+
+.section-link {
+  font-size: 0.85rem;
+  color: var(--accent-dim);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color var(--transition);
+}
+
+.section-link:hover {
+  color: var(--fg-bright);
+}
+
 .section-heading {
   font-size: 1.2rem;
   color: var(--accent);
@@ -585,6 +610,38 @@ pre code {
   margin: 0;
 }
 
+.copy-code-btn {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  padding: 0.2rem 0.55rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--fg-dim);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity var(--transition), color var(--transition), border-color var(--transition), background-color var(--transition);
+  z-index: 2;
+  user-select: none;
+}
+
+pre:hover .copy-code-btn {
+  opacity: 1;
+}
+
+.copy-code-btn:hover {
+  color: var(--fg-bright);
+  border-color: var(--accent);
+}
+
+.copy-code-btn.copied {
+  color: #50fa7b;
+  border-color: #50fa7b;
+}
+
 /* --- Tables --- */
 table {
   width: 100%;
@@ -716,26 +773,70 @@ th {
   background: var(--bg-alt);
   border: 1px solid var(--border);
   border-radius: 6px;
-  transition: border-color var(--transition), background-color var(--transition), transform var(--transition);
+  transition: border-color var(--transition), background-color var(--transition);
   color: var(--fg);
-  text-decoration: none;
 }
 
 .project-card:hover {
-  border-color: var(--accent);
+  border-color: var(--accent-dim);
   background: var(--bg-hover);
-  transform: translateX(4px);
-  color: var(--fg);
 }
 
 .project-card-inner {
   flex: 1;
 }
 
+.project-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 0.35rem;
+  flex-wrap: wrap;
+}
+
 .project-card-name {
   font-size: 1rem;
+  color: var(--fg-bright);
+  margin: 0;
+}
+
+.project-card-name a {
   color: var(--accent);
-  margin: 0 0 0.3rem;
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+.project-card-name a:hover {
+  color: var(--fg-bright);
+}
+
+.project-arrow {
+  display: inline-block;
+  font-size: 0.85rem;
+  transition: transform var(--transition);
+}
+
+.project-card-name a:hover .project-arrow {
+  transform: translate(2px, -2px);
+}
+
+.project-article-link {
+  font-size: 0.72rem;
+  color: var(--accent);
+  background: var(--accent-glow);
+  border: 1px solid var(--accent-dim);
+  padding: 0.15rem 0.5rem;
+  border-radius: 3px;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background-color var(--transition), color var(--transition), border-color var(--transition);
+}
+
+.project-article-link:hover {
+  background: var(--accent);
+  color: var(--bg);
+  border-color: var(--accent);
 }
 
 .project-card-desc {
@@ -759,18 +860,6 @@ th {
   padding: 0.15rem 0.5rem;
   border-radius: 3px;
   border: 1px solid var(--border);
-}
-
-.project-card-arrow {
-  color: var(--fg-dim);
-  font-size: 1.2rem;
-  margin-left: 1rem;
-  transition: color var(--transition), transform var(--transition);
-}
-
-.project-card:hover .project-card-arrow {
-  color: var(--accent);
-  transform: translateX(3px);
 }
 
 /* --- Resume Page --- */

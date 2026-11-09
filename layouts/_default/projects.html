@@ -1,13 +1,23 @@
 {{ define "main" }}
 <h1 class="page-title">Projects</h1>
-<p class="projects-intro">Things I've built or contributed to.</p>
+<p class="projects-intro">Things I've built, contributed to, or run in production.</p>
 
 <div class="projects-grid">
   {{- range .Site.Params.projects }}
-  {{- if eq .url "#" }}
   <div class="project-card">
     <div class="project-card-inner">
-      <h3 class="project-card-name">{{ .name }}</h3>
+      <div class="project-card-header">
+        <h3 class="project-card-name">
+          {{- if eq .url "#" -}}
+            {{ .name }}
+          {{- else -}}
+            <a href="{{ .url }}" target="_blank" rel="noopener noreferrer">{{ .name }} <span class="project-arrow">↗</span></a>
+          {{- end -}}
+        </h3>
+        {{- with .article }}
+        <a href="{{ . }}" class="project-article-link">writeup ↗</a>
+        {{- end }}
+      </div>
       <p class="project-card-desc">{{ .description }}</p>
       {{- with .tags }}
       <div class="project-card-tags">
@@ -18,22 +28,6 @@
       {{- end }}
     </div>
   </div>
-  {{- else }}
-  <a href="{{ .url }}" class="project-card" target="_blank" rel="noopener noreferrer">
-    <div class="project-card-inner">
-      <h3 class="project-card-name">{{ .name }}</h3>
-      <p class="project-card-desc">{{ .description }}</p>
-      {{- with .tags }}
-      <div class="project-card-tags">
-        {{- range . }}
-        <span class="project-card-tag">{{ . }}</span>
-        {{- end }}
-      </div>
-      {{- end }}
-    </div>
-    <span class="project-card-arrow">→</span>
-  </a>
-  {{- end }}
   {{- end }}
 </div>
 {{ end }}

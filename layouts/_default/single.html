@@ -6,6 +6,8 @@
       <span>{{ .Site.Params.author | upper }}</span>
       <span class="separator">·</span>
       <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "02 Jan 2006" }}</time>
+      <span class="separator">·</span>
+      <span class="reading-time">{{ .ReadingTime }} min read</span>
       {{- with .Params.tags }}
       <span class="separator">|</span>
       <span class="post-tags">

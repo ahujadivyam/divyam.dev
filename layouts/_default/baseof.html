@@ -11,5 +11,33 @@
     </main>
   </div>
   {{- partial "footer.html" . -}}
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('pre').forEach(pre => {
+        const btn = document.createElement('button');
+        btn.className = 'copy-code-btn';
+        btn.type = 'button';
+        btn.setAttribute('aria-label', 'Copy code to clipboard');
+        btn.innerText = 'copy';
+        btn.addEventListener('click', async () => {
+          const codeEl = pre.querySelector('code');
+          const text = codeEl ? codeEl.innerText : pre.innerText;
+          try {
+            await navigator.clipboard.writeText(text);
+            btn.innerText = 'copied!';
+            btn.classList.add('copied');
+            setTimeout(() => {
+              btn.innerText = 'copy';
+              btn.classList.remove('copied');
+            }, 2000);
+          } catch (err) {
+            btn.innerText = 'failed';
+          }
+        });
+        pre.appendChild(btn);
+      });
+    });
+  </script>
 </body>
 </html>
