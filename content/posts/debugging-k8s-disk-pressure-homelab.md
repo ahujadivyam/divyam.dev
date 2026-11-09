@@ -1,6 +1,6 @@
 ---
 title: "Why My Git Server 502'd: A Journey Through Kubernetes Disk Pressure"
-date: 2024-11-10T01:35:00Z
+date: 2026-11-10T01:30:00+05:30
 draft: false
 tags: ["Kubernetes", "Homelab", "DevOps", "Linux", "Networking"]
 ---

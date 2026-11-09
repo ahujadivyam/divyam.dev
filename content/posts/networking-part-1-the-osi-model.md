@@ -1,6 +1,6 @@
 ---
 title: "Demystifying Networking: The OSI Model from a Developer's Perspective"
-date: 2024-01-10T10:00:00Z
+date: 2026-05-10T10:00:00Z
 draft: false
 tags: ["Networking", "OSI Model", "Fundamentals"]
 ---

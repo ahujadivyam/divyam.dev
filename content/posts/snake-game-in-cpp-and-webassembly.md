@@ -1,6 +1,6 @@
 ---
 title: "Running a C++ Snake Game in the Browser with WebAssembly"
-date: 2024-06-20T10:00:00Z
+date: 2021-09-25T10:00:00Z
 draft: false
 tags: ["WebAssembly", "C++", "GameDev", "Emscripten"]
 ---

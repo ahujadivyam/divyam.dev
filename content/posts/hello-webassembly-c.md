@@ -77,6 +77,6 @@ Now, open your browser and head to `http://localhost:8000/hello.html`. If everyt
 
 This is obviously just the tip of the iceberg. Printing a string is fun, but the real power of WebAssembly comes from porting real C++ codebases (like game engines, audio processors, or physics simulators) directly into the browser. 
 
-If you want to see a full interactive project in action, check out my follow-up post on [Porting a C++ Snake Game to the Browser with WebAssembly](/posts/snake-game-in-cpp-and-webassembly/).
+If you want to see a full interactive project in action, check out [Running a C++ Snake Game in the Browser with WebAssembly](/posts/snake-game-in-cpp-and-webassembly/).
 
 Until then, happy hacking!

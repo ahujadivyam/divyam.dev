@@ -1,6 +1,6 @@
 ---
 title: "I Built a CHIP-8 Emulator in JavaScript"
-date: 2024-03-15T10:00:00Z
+date: 2021-08-20T10:00:00Z
 draft: false
 tags: ["JavaScript", "Emulators", "Canvas", "WebAudio"]
 ---
