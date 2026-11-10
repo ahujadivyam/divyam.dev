@@ -3,10 +3,10 @@
 
 #let data = yaml("../data/resume.yaml")
 
-#set page(paper: "a4", margin: (x: 0.5in, y: 0.45in))
+#set page(paper: "a4", margin: (x: 0.5in, y: 0.38in))
 #set document(title: data.name + "'s Resume", author: data.name)
 #set par(leading: 0.45em)
-#set text(font: "Source Sans 3", size: 10pt)
+#set text(font: "Source Sans 3", size: 9.5pt)
 #set underline(offset: 2pt)
 #show heading: set text(weight: "semibold")
 #show heading: it => { v(2pt); it; v(1pt) }
@@ -155,21 +155,21 @@
   ]
 }
 
-// // --- Open Source (hidden from PDF, shown on website) ---
-// #if "open_source" in data.keys() and data.open_source.len() > 0 {
-//   [= Open Source]
-//   for os in data.open_source {
-//     openSourceItem(name: os.name, role: os.at("role", default: ""), stack: os.at("stack", default: ()))[
-//       #for bullet in os.at("bullets", default: ()) {
-//         [- #md(bullet)]
-//       }
-//       #let links = os.at("links", default: ())
-//       #if links.len() > 0 {
-//         [- #links.map(l => underline(link(l.url)[#l.display])).join(", ")]
-//       }
-//     ]
-//   }
-// }
+// --- Open Source ---
+#if "open_source" in data.keys() and data.open_source.len() > 0 {
+  [= Open Source]
+  for os in data.open_source {
+    openSourceItem(name: os.name, role: os.at("role", default: ""), stack: os.at("stack", default: ()))[
+      #for bullet in os.at("bullets", default: ()) {
+        [- #md(bullet)]
+      }
+      #let links = os.at("links", default: ())
+      #if links.len() > 0 {
+        [- #links.map(l => underline(link(l.url)[#l.display])).join(", ")]
+      }
+    ]
+  }
+}
 
 
 // --- Skills ---

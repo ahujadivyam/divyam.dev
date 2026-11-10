@@ -32,18 +32,20 @@ experience:
     stack:
       - Python
       - TypeScript
-      - Docker
-      - Azure
+      - Node.js
       - React
+      - Docker
+      - Microsoft Azure
       - Playwright
     bullets:
-      - "Built and modernized **large-scale AI evaluation platform and infrastructure** for multimodal models and agentic workflows across the Microsoft Office platform."
-      - "Optimized the observability platform and dashboard to analyze **~1M** telemetry and evaluation records, enabling large-scale reliability, performance, and quality monitoring."
-      - "Owned the end-to-end Responsible AI (RAI) evaluation pipeline gating model releases; optimized execution latency by **50%** through asynchronous worker pools, intelligent request batching, and custom retry algorithms."
-      - "Hardened distributed workloads across the evaluation lifecycle against **transient service failures, authentication expiry, timeouts, and resource exhaustion**, reaching **99%** reliability and **<1%** infrastructure failure rate."
-      - "Migrated from JSON-based configurations to typed configurations, reducing configuration errors by **25%** and improving overall ease of maintenance."
-      - "Built and enhanced **automated failure detection, investigation and PR creation agentic workflows**, reducing manual triage effort by **95%** and improving diagnosis of infrastructure and application-level evaluation failures."
-      - "Contributed to the internal Knowledge Base and Agentic Workflows, accelerating day-to-day platform operations and engineering velocity."
+      - "Built and scaled platform and infrastructure for multimodal model evaluations across the Microsoft Office experiences."
+      - "Optimized observability platforms to track over **1M telemetry records** for performance and reliability monitoring."
+      - "Owned the Responsible AI release pipeline, improving overall reliability with headless execution, better error handling, and custom retries."
+      - "Made distributed workloads significantly more robust, gracefully handling transient errors and timeouts to hit **99%** infrastructure reliability."
+      - "Migrated to type-safe configuration schemas, dropping config errors by **25%** and streamlining system maintainability."
+      - "Built agentic workflows that automatically detect pipeline failures, investigate root causes, and open fixing PRs, dropping manual triage effort by **95%**."
+      - "Contributed to the internal knowledge base that powers our automated workflows, accelerating team operations and issue resolution."
+      - "Contributed to maintaining WCAG accessibility standards across Microsoft Excel experiences."
 
   - company: Advanced Micro Devices (AMD)
     role: System Software Designer
@@ -60,11 +62,11 @@ experience:
       - SQLite
       - Docker
     bullets:
-      - "Engineered an OpenJDK performance monitoring and telemetry platform (Django, React, SQLite) to track nightly SPECjbb runs, enabling early detection and isolation of performance regressions."
-      - "Automated systems to benchmark and tune Java nightly using machine learning models, achieving a **30%** reduction in manual effort and improved parameter accuracy."
-      - "Applied advanced Java tuning techniques and profiled CPU/memory bottlenecks with Linux perf, yielding a **2%** throughput increase on SPECjbb benchmarks across High Performance Computing (HPC) servers."
-      - "Refactored and containerized legacy benchmarking workflows with Docker for cross-platform execution, driving a **90%** reduction in deployment and environment errors."
-      - "Awarded the **Spotlight Award** for exceptional contributions to automation, tuning, and nightly benchmark visualization."
+      - "Built a full-stack telemetry platform (Django, React, SQLite) to track nightly OpenJDK benchmarks and isolate performance regressions."
+      - "Automated nightly Java tuning using ML models, cutting manual benchmarking effort by **30%**."
+      - "Profiled and tuned Java workloads using Linux perf to resolve CPU/memory bottlenecks, yielding a **2%** throughput increase on HPC servers."
+      - "Containerized legacy workflows with Docker, dropping deployment and environment errors by **90%**."
+      - "Received the **Spotlight Award** for impact in automation and systems tuning."
 
   - company: Chromium
     role: Google Summer of Code
@@ -77,7 +79,8 @@ experience:
       - WebAudio
       - WebWorkers
     bullets:
-      - "Engineered a lock-free C++ ring buffer as a reference library for real-time audio streaming between WebAudio, WebAssembly, and WebWorkers, benchmarking multiple concurrency strategies."
+      - "Engineered a lock-free C++ ring buffer as a reference library for real-time WebAssembly audio streaming."
+      - "Benchmarked multiple concurrency strategies across WebWorkers to optimize high-performance audio pipelines."
     links:
       - display: "summerofcode.withgoogle.com"
         url: "https://summerofcode.withgoogle.com/archive/2022/projects/8aeeJZr6"
@@ -88,11 +91,10 @@ open_source:
     stack:
       - Kotlin
       - Android SDK
-      - Rust
-      - JavaScript
-      - VPNService
+      - XML
+      - Git
     bullets:
-      - "Contributed across Tor Project client and web applications; engineered routing resilience and lifecycle management for the Tor VPN Android app, and developed enhancements for Tor Web platforms."
+      - "Shipped UI fixes for the Tor VPN Android app, working directly with maintainers through public issue trackers."
     links:
       - display: "gitlab.torproject.org/tpo"
         url: "https://gitlab.torproject.org/tpo"
@@ -103,8 +105,9 @@ open_source:
       - JavaScript
       - HTML5 Canvas
       - WebGL
+      - GitHub
     bullets:
-      - "Contributed core library improvements and rendering fixes to p5.js, optimizing canvas event handling and cross-browser graphic performance."
+      - "Helped debug WebGL and Canvas rendering issues, triaged incoming bugs, and pitched architecture updates for the web editor."
     links:
       - display: "github.com/processing/p5.js"
         url: "https://github.com/processing/p5.js"
@@ -114,33 +117,27 @@ skills:
     items:
       - C/C++
       - Python
-      - Go (Golang)
-      - Java
-      - Kotlin
-      - TypeScript
+      - JavaScript/TypeScript
+      - Java/Kotlin
       - Bash
-  - type: Frameworks & Tools
+      - Go
+      - Rust
+  - type: Frameworks & AI
     items:
       - PyTorch
       - Azure OpenAI
-      - Android SDK / NDK
       - React/Next.js
       - Django/Flask
-      - Node.js
       - gRPC
-      - Emscripten
-      - Playwright
-  - type: Infrastructure & Databases
+      - WebAssembly
+  - type: Infrastructure & Data
     items:
       - Kubernetes
       - Docker
       - Linux/POSIX
       - PostgreSQL
-      - MongoDB
       - Redis
-      - MySQL
       - SQLite
-      - WebAssembly
       - WireGuard
 
 projects:
